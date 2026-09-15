@@ -40,5 +40,5 @@ Phase 0 changes repository governance and documentation only. It does not brand 
 - [x] Beacon-specific changelog and upstream procedure exist.
 - [x] MSP hierarchy decision and rationale are recorded.
 - [x] Repository dependency and source validation passes.
-- [ ] Baseline tag and bootstrap commit are pushed.
-- [ ] Integration branch is pushed.
+- [x] Baseline tag and bootstrap commit are pushed.
+- [x] Integration branch is pushed.
