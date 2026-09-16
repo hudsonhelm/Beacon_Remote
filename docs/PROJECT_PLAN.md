@@ -1,6 +1,6 @@
 # Beacon / MeshCentral Fork — Project Bootstrap and v1 Plan
 
-> **Document version:** 5
+> **Document version:** 6
 > **Last updated:** September 15, 2026
 > **Status:** Active project brief / source of truth
 >
@@ -24,6 +24,7 @@
 | **v3** | September 13, 2026 | Added the **“Engage”** authorization convention allowing Codex to document, implement, commit locally, and push the current approved scope to GitHub without further approval unless a blocker or material scope issue is encountered. |
 | **v4** | September 15, 2026 | Adopted **Beacon** as the product and repository name and recorded the Phase 0 fixed Customer → Site → Device hierarchy decision. |
 | **v5** | September 15, 2026 | Separated the Beacon product-family name from the remote-management module and renamed its repository to `Beacon_Remote`; established the `Beacon_<Module>` repository naming convention. |
+| **v6** | September 15, 2026 | Completed Phase 1 infrastructure discovery and environment design for the existing OVHcloud VPS; recorded the shared-host isolation, DNS, NGINX, port, operating-system, and layered-backup decisions in `docs/PHASE_1.md`. |
 
 ---
 
@@ -240,7 +241,7 @@ Determine exactly where the first live deployments will run.
 
 ### Known Facts
 
-Nelson believes he already pays for a small cloud server that has barely or never been used. Provider and specifications will be supplied later.
+The initial host is the existing OVHcloud VPS in Beauharnois, Canada. It provides 4 vCores, 8 GB RAM, 75 GB storage, public IPv4 and IPv6, OVHcloud snapshots, and Standard automated backup. Test and production will initially share the host through strictly isolated Docker Compose projects. See `docs/PHASE_1.md` for the verified inventory, decisions, limitations, and Phase 2 handoff.
 
 ### Gather
 
@@ -1253,14 +1254,7 @@ When this document is first provided to Codex, begin with these steps:
 
 These are intentionally unresolved.
 
-- Cloud provider
-- VM specifications
-- Host operating system
-- Whether one VM can comfortably host both test and production initially
-- Final production hostname
-- Final test hostname
 - Database choice/version
-- Reverse proxy choice, if any
 - Backup destination
 - Email/SMTP requirements
 - First branding assets
