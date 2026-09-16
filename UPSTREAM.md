@@ -4,7 +4,7 @@
 
 - Upstream repository: `https://github.com/Ylianst/MeshCentral.git`
 - Upstream default branch: `master`
-- Beacon repository: `https://github.com/hudsonhelm/Beacon.git`
+- Beacon Remote repository: `https://github.com/hudsonhelm/Beacon_Remote.git`
 - Beacon visibility: private
 - Beacon production/default branch: `master`
 - Integration branch: `develop`
@@ -22,7 +22,7 @@ The baseline tag points directly to the unmodified upstream commit. Beacon boots
 ## Remote Configuration
 
 ```text
-origin    https://github.com/hudsonhelm/Beacon.git
+origin    https://github.com/hudsonhelm/Beacon_Remote.git
 upstream  https://github.com/Ylianst/MeshCentral.git
 ```
 

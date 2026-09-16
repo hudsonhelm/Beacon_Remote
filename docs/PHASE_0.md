@@ -2,8 +2,10 @@
 
 ## Decisions
 
-- Product name: Beacon
-- GitHub repository: `hudsonhelm/Beacon`
+- Product family: Beacon
+- Module: Remote management
+- GitHub repository: `hudsonhelm/Beacon_Remote`
+- Repository naming convention: `Beacon_<Module>`
 - Repository visibility: private
 - Upstream: `Ylianst/MeshCentral`
 - Default/upstream branch: `master`
@@ -42,3 +44,4 @@ Phase 0 changes repository governance and documentation only. It does not brand 
 - [x] Repository dependency and source validation passes.
 - [x] Baseline tag and bootstrap commit are pushed.
 - [x] Integration branch is pushed.
+- [x] Remote-management repository is named `Beacon_Remote` and the product-family naming convention is documented.

@@ -1,12 +1,13 @@
 # Beacon / MeshCentral Fork — Project Bootstrap and v1 Plan
 
-> **Document version:** 4
+> **Document version:** 5
 > **Last updated:** September 15, 2026
 > **Status:** Active project brief / source of truth
 >
 > **Purpose:** This document is intended to be pasted or provided to the initial chat in a new Codex project. Treat it as the starting project brief and working source of truth until Nelson changes it.
 >
 > **Product name:** **Beacon**
+> **Remote-management repository:** **`hudsonhelm/Beacon_Remote`**
 > **Foundation:** MeshCentral fork
 > **Primary goal:** Get a useful, live, self-hosted remote-management platform running immediately, then improve it incrementally based on real Hudson Helm support work.
 >
@@ -22,12 +23,15 @@
 | **v2** | September 13, 2026 | Added temporary-session UAC/elevation, Phase 0 hierarchy decision, clipboard reliability, six-digit quick-support workflow, and unified MeshAgent/Assistant endpoint experience as explicit project requirements. |
 | **v3** | September 13, 2026 | Added the **“Engage”** authorization convention allowing Codex to document, implement, commit locally, and push the current approved scope to GitHub without further approval unless a blocker or material scope issue is encountered. |
 | **v4** | September 15, 2026 | Adopted **Beacon** as the product and repository name and recorded the Phase 0 fixed Customer → Site → Device hierarchy decision. |
+| **v5** | September 15, 2026 | Separated the Beacon product-family name from the remote-management module and renamed its repository to `Beacon_Remote`; established the `Beacon_<Module>` repository naming convention. |
 
 ---
 
 ## 1. Product Vision
 
 Beacon begins as a customized fork of MeshCentral for Hudson Helm's own day-to-day MSP use.
+
+Beacon is the product-family name. This MeshCentral-based remote-management module is maintained in `hudsonhelm/Beacon_Remote`. Future module repositories should use the `Beacon_<Module>` convention so their relationship to the Beacon product line is explicit without treating this repository as the entire product family.
 
 The long-term idea is broader than remote control: one persistent, self-updating endpoint agent that can eventually expose separately licensed or enabled capabilities without requiring administrators to replace the agent every time a new feature is added.
 
@@ -1253,8 +1257,6 @@ These are intentionally unresolved.
 - VM specifications
 - Host operating system
 - Whether one VM can comfortably host both test and production initially
-- GitHub owner/organization for the fork
-- Final repository name
 - Final production hostname
 - Final test hostname
 - Database choice/version
@@ -1277,6 +1279,8 @@ Do not guess silently on infrastructure/security decisions that depend on these 
 Until Nelson changes them:
 
 - Product name: **Beacon**
+- Remote-management repository: **`hudsonhelm/Beacon_Remote`**
+- Future module repositories use the **`Beacon_<Module>`** naming convention.
 - Parent/business: **Hudson Helm**
 - Windows is the priority platform.
 - Docker is the deployment standard.
