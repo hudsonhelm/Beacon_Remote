@@ -12,6 +12,7 @@ This file records changes made specifically for Beacon on top of upstream MeshCe
 - Selected the fixed Customer → Site → Device MSP hierarchy with tags for cross-cutting organization.
 - Renamed the remote-management repository from `Beacon` to `Beacon_Remote`.
 - Established `Beacon` as the product-family name and `Beacon_<Module>` as the repository naming convention for product-line modules.
-- Completed the Phase 1 OVHcloud infrastructure inventory and recorded the initial shared-host topology, Ubuntu LTS target, Cloudflare DNS-only plan, NGINX reverse proxy, public-port plan, and layered-backup approach.
+- Began the Phase 1 OVHcloud infrastructure inventory and recorded the initial shared-host topology, Ubuntu LTS target, Cloudflare DNS-only plan, NGINX reverse proxy, public-port plan, and layered-backup approach.
+- Corrected Phase 1 to in progress after a strict audit identified unverified storage, bandwidth, OS, firewall, service, and administrative-access details.
 
 No functional MeshCentral customizations are included in this bootstrap change.

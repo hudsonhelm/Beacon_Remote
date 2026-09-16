@@ -2,7 +2,7 @@
 
 ## Status
 
-Phase 1 design complete on September 15, 2026. No VPS installation or configuration was performed in this phase.
+Phase 1 is in progress. The environment design is recorded, but the original infrastructure-discovery checklist is not yet complete. No VPS installation or configuration has been performed.
 
 ## Verified Hosting Inventory
 
@@ -87,10 +87,28 @@ Use layered recovery rather than treating a provider image as the only backup:
 
 Provider backups and snapshots do not replace application-level, off-server backups.
 
+## Infrastructure Discovery Checklist
+
+- [x] Cloud provider
+- [x] vCPU
+- [x] RAM
+- [x] Disk capacity
+- [ ] Disk type
+- [ ] Contracted bandwidth allowance
+- [ ] Installed operating system and version, or definitive confirmation that no OS is installed
+- [x] Public IPv4 and IPv6 addressing
+- [ ] OVHcloud firewall/security-group configuration
+- [ ] Existing services on the VPS
+- [x] Provider snapshot/backup capability
+- [ ] Current root/sudo access method
+- [ ] Whether SSH-key authentication is already configured
+
+Closed external ports and a blank OS field are observations, not proof of the current firewall, service, operating-system, or authentication configuration.
+
 ## Phase 1 Exit Checklist
 
 - [x] Hosting location known.
-- [x] VPS capacity and addressing recorded.
+- [ ] Required infrastructure inventory complete.
 - [x] Test/production topology chosen.
 - [x] Host OS family and access approach chosen.
 - [x] DNS and initial proxy plan chosen.
@@ -98,13 +116,12 @@ Provider backups and snapshots do not replace application-level, off-server back
 - [x] Backup approach identified.
 - [x] No production or test deployment performed prematurely.
 
-## Open Items Carried Into Phase 2
+## Remaining Phase 1 Items
 
-- Confirm the exact Ubuntu LTS image offered by OVHcloud before reinstalling.
-- Confirm the contracted storage type and bandwidth if OVHcloud exposes them in service or billing details.
-- Record the administrative SSH public key used for installation without committing any private key.
-- Identify the administrative source IP or other practical SSH restriction method.
-- Confirm IPv6 behavior before creating DNS AAAA records.
-- Select the encrypted off-server application-backup destination before production acceptance.
+- Determine the current OS state without initiating a reinstall.
+- Confirm the contracted storage type and bandwidth from OVHcloud service or billing details.
+- Inspect the OVHcloud network firewall/security configuration.
+- Determine whether any services exist on the VPS rather than inferring their absence from closed ports.
+- Determine the current root/sudo access and SSH-key state.
 
-These items do not prevent Phase 1 design completion. VPS reinstallation is destructive and begins only as an explicitly approved Phase 2 action.
+After those observations are recorded, Phase 1 can close. Selecting the installation SSH key, reinstalling the VPS, configuring IPv6, and implementing the off-server backup destination are Phase 2 or later implementation actions. VPS reinstallation is destructive and will begin only with explicit approval.
