@@ -14,5 +14,6 @@ This file records changes made specifically for Beacon on top of upstream MeshCe
 - Established `Beacon` as the product-family name and `Beacon_<Module>` as the repository naming convention for product-line modules.
 - Began the Phase 1 OVHcloud infrastructure inventory and recorded the initial shared-host topology, Ubuntu LTS target, Cloudflare DNS-only plan, NGINX reverse proxy, public-port plan, and layered-backup approach.
 - Corrected Phase 1 to in progress after a strict audit identified unverified storage, bandwidth, OS, firewall, service, and administrative-access details.
+- Completed Phase 1 after verifying the current Ubuntu and OVHcloud network state, explicitly accepting unavailable storage-type and bandwidth details, and dispositioning the untouched guest configuration as superseded by the clean Phase 2 rebuild.
 
 No functional MeshCentral customizations are included in this bootstrap change.

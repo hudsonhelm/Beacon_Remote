@@ -2,7 +2,7 @@
 
 ## Status
 
-Phase 1 is in progress. The environment design is recorded, but the original infrastructure-discovery checklist is not yet complete. No VPS installation or configuration has been performed.
+Phase 1 completed on September 15, 2026. The environment design is approved, and unavailable provider specifications are explicitly accepted as uncertainties subject to post-rebuild monitoring. No VPS installation or configuration was performed in this phase.
 
 ## Verified Hosting Inventory
 
@@ -21,10 +21,14 @@ Phase 1 is in progress. The environment design is recorded, but the original inf
 - Additional disks: disabled
 - OVHcloud Snapshot option: enabled
 - OVHcloud Automated Backup: Standard, active; a backup was shown for September 15, 2026 at 20:00
+- OVHcloud Anti-DDoS: automatic for IPv4
+- OVHcloud Edge Firewall: disabled for IPv4
 
-The OVHcloud control panel did not identify an installed OS and offered only `Reinstall my VPS`. External checks found ports 22, 80, 443, and 4433 closed. Because the VPS has never been used and exposes no reachable service, Phase 2 will treat it as a blank host and install a supported minimal Ubuntu Server LTS image.
+The OVHcloud control panel did not identify an installed OS and offered only `Reinstall my VPS`. The read-only KVM console subsequently confirmed that the local disk boots the untouched OVHcloud default Ubuntu 25.10 image to a login prompt. Its login banner advertises a web console on TCP 9090. External checks found ports 22, 80, 443, 4433, and 9090 closed. Nelson confirmed that he has never logged in to or modified the VPS. Phase 2 will erase this disposable non-LTS default installation and replace it with a supported minimal Ubuntu Server LTS image, so its current guest services, users, firewall, sudo configuration, and SSH authentication state do not need further inventory.
 
-The exact storage medium and contracted bandwidth were not displayed in the supplied control-panel views. Current OVHcloud offers with the same 4-vCore, 8-GB, 75-GB resource profile advertise NVMe storage and 1 Gbps unlimited public traffic, but those characteristics remain unverified for this `VPS-1 2026` contract and must not be represented as confirmed.
+OVHcloud's daily monitoring view showed low processor use of roughly 3–4%, low background network traffic with intermittent bursts, and reported RAM usage near 98% throughout the displayed period. Those graphs confirm that the VM is running, but they do not identify the responsible processes or establish whether the RAM figure reflects guest workload, cache accounting, or a provider-metric issue.
+
+The exact storage medium and contracted bandwidth were not displayed in the supplied control-panel views. Current OVHcloud offers with the same 4-vCore, 8-GB, 75-GB resource profile advertise NVMe storage and 1 Gbps unlimited public traffic, but those characteristics remain unverified for this `VPS-1 2026` contract and must not be represented as confirmed. Nelson accepted this uncertainty for the initial deployment. Phase 2 will verify actual disk and network behavior after rebuild, and sustained resource use will determine whether test must move to a separate VPS.
 
 ## Environment Topology Decision
 
@@ -93,22 +97,22 @@ Provider backups and snapshots do not replace application-level, off-server back
 - [x] vCPU
 - [x] RAM
 - [x] Disk capacity
-- [ ] Disk type
-- [ ] Contracted bandwidth allowance
-- [ ] Installed operating system and version, or definitive confirmation that no OS is installed
+- [x] Disk type: unavailable from the supplied OVHcloud views; uncertainty explicitly accepted
+- [x] Contracted bandwidth allowance: unavailable from the supplied OVHcloud views; uncertainty explicitly accepted
+- [x] Installed operating system and version: Ubuntu 25.10
 - [x] Public IPv4 and IPv6 addressing
-- [ ] OVHcloud firewall/security-group configuration
-- [ ] Existing services on the VPS
+- [x] OVHcloud firewall/security-group configuration: Edge Firewall disabled; Anti-DDoS automatic
+- [x] Existing services on the VPS: not applicable; untouched default installation will be erased
 - [x] Provider snapshot/backup capability
-- [ ] Current root/sudo access method
-- [ ] Whether SSH-key authentication is already configured
+- [x] Current root/sudo access method: not applicable; credentials and sudo policy will be replaced
+- [x] Whether SSH-key authentication is already configured: not applicable; authorized keys will be replaced
 
-Closed external ports and a blank OS field are observations, not proof of the current firewall, service, operating-system, or authentication configuration.
+Items marked not applicable are deliberately disposed of by the approved clean reinstall; they are not being represented as verified properties of the current guest.
 
 ## Phase 1 Exit Checklist
 
 - [x] Hosting location known.
-- [ ] Required infrastructure inventory complete.
+- [x] Required infrastructure inventory complete or explicitly dispositioned.
 - [x] Test/production topology chosen.
 - [x] Host OS family and access approach chosen.
 - [x] DNS and initial proxy plan chosen.
@@ -116,12 +120,11 @@ Closed external ports and a blank OS field are observations, not proof of the cu
 - [x] Backup approach identified.
 - [x] No production or test deployment performed prematurely.
 
-## Remaining Phase 1 Items
+## Accepted Limitations and Phase 2 Handoff
 
-- Determine the current OS state without initiating a reinstall.
-- Confirm the contracted storage type and bandwidth from OVHcloud service or billing details.
-- Inspect the OVHcloud network firewall/security configuration.
-- Determine whether any services exist on the VPS rather than inferring their absence from closed ports.
-- Determine the current root/sudo access and SSH-key state.
+- Storage type and contracted bandwidth remain unknown and must not be claimed as confirmed specifications.
+- Monitor real disk, memory, CPU, and network behavior after the clean rebuild.
+- Move test to a separate VPS if sustained utilization or operational risk makes shared hosting unsuitable.
+- Record the new administrative SSH key, sudo policy, guest firewall, exposed services, and exact Ubuntu image during Phase 2.
 
-After those observations are recorded, Phase 1 can close. Selecting the installation SSH key, reinstalling the VPS, configuring IPv6, and implementing the off-server backup destination are Phase 2 or later implementation actions. VPS reinstallation is destructive and will begin only with explicit approval.
+Phase 1 is closed with these limitations accepted. Selecting the installation SSH key, reinstalling the VPS, configuring IPv6, and implementing the off-server backup destination are Phase 2 or later implementation actions. VPS reinstallation is destructive and will begin only with explicit approval.

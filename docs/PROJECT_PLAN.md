@@ -1,6 +1,6 @@
 # Beacon / MeshCentral Fork — Project Bootstrap and v1 Plan
 
-> **Document version:** 7
+> **Document version:** 8
 > **Last updated:** September 15, 2026
 > **Status:** Active project brief / source of truth
 >
@@ -26,6 +26,7 @@
 | **v5** | September 15, 2026 | Separated the Beacon product-family name from the remote-management module and renamed its repository to `Beacon_Remote`; established the `Beacon_<Module>` repository naming convention. |
 | **v6** | September 15, 2026 | Completed Phase 1 infrastructure discovery and environment design for the existing OVHcloud VPS; recorded the shared-host isolation, DNS, NGINX, port, operating-system, and layered-backup decisions in `docs/PHASE_1.md`. |
 | **v7** | September 15, 2026 | Corrected Phase 1 to in progress after a strict audit found that the design was complete but several required OVHcloud inventory fields remained unverified. |
+| **v8** | September 15, 2026 | Closed Phase 1 after explicitly accepting the unavailable contracted storage-type and bandwidth details and dispositioning the untouched guest state as not applicable because Phase 2 will perform a clean reinstall. |
 
 ---
 
@@ -242,7 +243,7 @@ Determine exactly where the first live deployments will run.
 
 ### Known Facts
 
-The initial host is the existing OVHcloud VPS in Beauharnois, Canada. It provides 4 vCores, 8 GB RAM, 75 GB storage, public IPv4 and IPv6, OVHcloud snapshots, and Standard automated backup. Test and production will initially share the host through strictly isolated Docker Compose projects. The environment design is complete, but Phase 1 remains in progress until every required infrastructure-discovery field in `docs/PHASE_1.md` is verified.
+The initial host is the existing OVHcloud VPS in Beauharnois, Canada. It provides 4 vCores, 8 GB RAM, 75 GB storage, public IPv4 and IPv6, OVHcloud snapshots, and Standard automated backup. Test and production will initially share the host through strictly isolated Docker Compose projects. Phase 1 is complete; unavailable contracted storage-type and bandwidth details are accepted uncertainties, and the untouched default guest state is superseded by the approved Phase 2 clean-reinstall plan. See `docs/PHASE_1.md` for the evidence, decisions, limitations, and handoff.
 
 ### Gather
 
