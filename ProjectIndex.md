@@ -1,53 +1,47 @@
 # Beacon Remote Project Document Index
 
-This index lists the documentation stored in the `Beacon_Remote` repository. Paths are relative to the repository root unless otherwise noted.
+This index identifies the repository documents that matter, what each is for, and the recommended reading order. Paths are relative to the repository root.
 
-## Start Here
+## Project-Related Documents
 
-| Document | Location | Description |
-|---|---|---|
-| Project plan | [`docs/PROJECT_PLAN.md`](docs/PROJECT_PLAN.md) | Active project brief and source of truth for Beacon Remote. Defines the product direction, requirements, phased implementation plan, working conventions, and acceptance criteria. |
-| Beacon changelog | [`CHANGELOG.md`](CHANGELOG.md) | Records Beacon-specific changes made on top of upstream MeshCentral. The `Unreleased` section summarizes completed project work that has not yet been assigned to a release. |
-| Upstream record | [`UPSTREAM.md`](UPSTREAM.md) | Identifies the official MeshCentral source, pinned baseline, repository and branch model, upstream-update procedure, and license-preservation requirements. |
+Review these documents first when planning or performing Beacon Remote work.
 
-## Phase Records
+| Document | Description |
+|---|---|
+| [`ProjectIndex.md`](ProjectIndex.md) | Master index of repository documentation, document purposes, and recommended reading order. |
+| [`docs/PROJECT_PLAN.md`](docs/PROJECT_PLAN.md) | Active Beacon Remote project brief and source of truth. Version 8 defines the product vision, requirements, philosophy, implementation phases, development conventions, and acceptance criteria, including the MSP hierarchy, quick-support workflow, clipboard behavior, temporary UAC elevation, and unified endpoint experience. |
+| [`docs/PHASE_0.md`](docs/PHASE_0.md) | Completed repository-bootstrap record covering Beacon naming, repository and branch structure, the upstream baseline, licensing, the Customer → Site → Device decision, validation, and the Phase 0 exit checklist. |
+| [`docs/PHASE_1.md`](docs/PHASE_1.md) | Completed infrastructure-discovery and environment-design record covering the OVH VPS inventory, host design, test/production isolation, Ubuntu target, DNS/TLS/NGINX plan, backups, and the Phase 2 handoff. |
+| [`docs/decisions/0001-msp-hierarchy.md`](docs/decisions/0001-msp-hierarchy.md) | Architecture Decision Record establishing Customer → Site → Device as the fixed operational hierarchy, with tags for cross-cutting organization. Records the rationale, rejected alternative, consequences, security guardrails, and MeshCentral mapping. |
+| [`CHANGELOG.md`](CHANGELOG.md) | Beacon-specific changelog, separate from upstream history. Its current `Unreleased` section records work through Phases 0–1 and notes that no functional MeshCentral customization has occurred yet. |
+| [`UPSTREAM.md`](UPSTREAM.md) | Records the official MeshCentral source, pinned baseline and tag, Beacon branch model and remotes, upstream-update procedure, and license-preservation requirements. |
 
-| Document | Location | Description |
-|---|---|---|
-| Phase 0 — Repository Bootstrap | [`docs/PHASE_0.md`](docs/PHASE_0.md) | Records the repository, naming, branching, hierarchy, upstream-baseline, validation, and exit decisions completed during project bootstrap. |
-| Phase 1 — Infrastructure Discovery and Environment Design | [`docs/PHASE_1.md`](docs/PHASE_1.md) | Records the verified OVHcloud inventory and the approved host, environment-isolation, DNS, TLS, port, backup, and Phase 2 handoff decisions. |
+### Recommended Reading Order
 
-## Architecture Decision Records
+1. Read `docs/PROJECT_PLAN.md` for current scope and governing rules.
+2. Read the phase record relevant to the work.
+3. Read applicable Architecture Decision Records under `docs/decisions/`.
+4. Check `CHANGELOG.md` for completed Beacon work.
+5. Consult `UPSTREAM.md` before integrating or comparing MeshCentral changes.
 
-| Document | Location | Description |
-|---|---|---|
-| ADR 0001 — Fixed MSP Hierarchy | [`docs/decisions/0001-msp-hierarchy.md`](docs/decisions/0001-msp-hierarchy.md) | Establishes the Customer → Site → Device hierarchy, explains how tags and MeshCentral device groups support it, and defines consequences and guardrails. |
+## Non-Project-Related Documents
 
-## Upstream MeshCentral Documentation
+These are inherited MeshCentral documentation, support references, packaging data, or repository workflow templates. **Do not review this list during ordinary project work unless the project-related documents do not contain what you need or the task directly concerns one of these areas.**
 
-These files are inherited from MeshCentral. They remain useful references, but they do not supersede the Beacon project plan or Beacon phase and decision records.
-
-| Document | Location | Description |
-|---|---|---|
-| MeshCentral overview | [`readme.md`](readme.md) | Upstream product overview with links to official documentation, tutorials, community resources, issue reporting, and licensing information. |
-| Documentation pointer | [`docs/README.md`](docs/README.md) | Points to the separately maintained upstream MeshCentral documentation repository. |
-| Docker configuration guide | [`docker/README.md`](docker/README.md) | Upstream guide to MeshCentral container variants, persistence, environment variables, databases, and Docker deployment configuration. |
-| RDP component notes | [`rdp/README.md`](rdp/README.md) | Describes the bundled `node-rdpjs` fork, Network Level Authentication support, and the GPL-3.0 licensing boundary for the `rdp` folder. |
-| Translation guide | [`translate/readme.txt`](translate/readme.txt) | Explains how to edit MeshCentral translations and regenerate translated pages. |
-| Security policy | [`SECURITY.md`](SECURITY.md) | Upstream supported-version and vulnerability-reporting information. |
-| Community standards | [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | Upstream conduct, collaboration, privacy, security, contribution, and enforcement expectations. |
-| License | [`LICENSE`](LICENSE) | Apache License 2.0 terms that govern MeshCentral and must remain with the fork. |
-
-## Supporting Reference Files
-
-| Document | Location | Description |
-|---|---|---|
-| Dependency list | [`dependencies.txt`](dependencies.txt) | Compact reference list of the application's direct Node.js dependency versions. The authoritative install manifest remains `package.json` and `package-lock.json`. |
-| Source package file list | [`SourceFileList.txt`](SourceFileList.txt) | Upstream inclusion patterns used when assembling a MeshCentral source package. |
-| Email and SMS templates | [`emails/`](emails/) | Runtime message templates for account, device, support, invitation, reset, login, and SMS workflows; these are product content rather than project-governance records. |
-| Public script-block reference | [`public/scriptblocks.txt`](public/scriptblocks.txt) | Runtime reference data used by MeshCentral's public web assets. |
-
-## Reading Order
-
-For project work, read `docs/PROJECT_PLAN.md` first, then the applicable phase record and architecture decision. Consult `CHANGELOG.md` for completed Beacon work and `UPSTREAM.md` before integrating a new MeshCentral baseline. Use the inherited MeshCentral documents only for the relevant upstream subsystem or procedure.
+| Document | Description |
+|---|---|
+| [`readme.md`](readme.md) | Inherited MeshCentral overview with links to upstream documentation, tutorials, community resources, issue reporting, and licensing. It is not Beacon's project brief. |
+| [`docs/README.md`](docs/README.md) | Small inherited pointer to MeshCentral's separately maintained documentation repository. |
+| [`docker/README.md`](docker/README.md) | Inherited MeshCentral Docker guide covering image variants, persistence, environment variables, databases, and deployment configuration. |
+| [`rdp/README.md`](rdp/README.md) | Technical notes for the bundled `node-rdpjs` fork, including NLA support and its GPL-3.0 licensing boundary. |
+| [`translate/readme.txt`](translate/readme.txt) | Instructions for editing MeshCentral translations and regenerating translated pages. |
+| [`SECURITY.md`](SECURITY.md) | Inherited supported-version and vulnerability-reporting policy. |
+| [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | Inherited community and contributor standards for conduct, collaboration, privacy, security, and enforcement. |
+| [`LICENSE`](LICENSE) | Apache License 2.0 governing upstream MeshCentral and retained with the Beacon fork. |
+| [`dependencies.txt`](dependencies.txt) | Compact direct-dependency version reference; `package.json` and `package-lock.json` remain authoritative. |
+| [`SourceFileList.txt`](SourceFileList.txt) | Upstream file list and patterns used to assemble a MeshCentral source package. |
+| [`public/scriptblocks.txt`](public/scriptblocks.txt) | Runtime reference data used by MeshCentral public web assets; it is not project documentation. |
+| [`.github/ISSUE_TEMPLATE/bug_report.md`](.github/ISSUE_TEMPLATE/bug_report.md) | GitHub template for filing bug reports. |
+| [`.github/ISSUE_TEMPLATE/feature_request.md`](.github/ISSUE_TEMPLATE/feature_request.md) | GitHub template for proposing features. |
+| [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) | Contributor checklist and template presented when creating a pull request. |
 
