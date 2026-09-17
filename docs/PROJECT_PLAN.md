@@ -1,7 +1,7 @@
 # Beacon / MeshCentral Fork — Project Bootstrap and v1 Plan
 
-> **Document version:** 8
-> **Last updated:** September 15, 2026
+> **Document version:** 9
+> **Last updated:** September 17, 2026
 > **Status:** Active project brief / source of truth
 >
 > **Purpose:** This document is intended to be pasted or provided to the initial chat in a new Codex project. Treat it as the starting project brief and working source of truth until Nelson changes it.
@@ -27,6 +27,7 @@
 | **v6** | September 15, 2026 | Completed Phase 1 infrastructure discovery and environment design for the existing OVHcloud VPS; recorded the shared-host isolation, DNS, NGINX, port, operating-system, and layered-backup decisions in `docs/PHASE_1.md`. |
 | **v7** | September 15, 2026 | Corrected Phase 1 to in progress after a strict audit found that the design was complete but several required OVHcloud inventory fields remained unverified. |
 | **v8** | September 15, 2026 | Closed Phase 1 after explicitly accepting the unavailable contracted storage-type and bandwidth details and dispositioning the untouched guest state as not applicable because Phase 2 will perform a clean reinstall. |
+| **v9** | September 17, 2026 | Completed Phase 2: rebuilt the OVHcloud VPS on patched Ubuntu 24.04 LTS, established key-only non-root administration, hardened SSH and UFW, installed and reboot-validated Docker/Compose and NGINX, and documented the backup exception and exposed ports in `docs/PHASE_2.md`. |
 
 ---
 
@@ -305,6 +306,8 @@ For the first deployment, prefer the least surprising networking configuration. 
 ---
 
 ## Phase 2 — Server Baseline and Docker Host Preparation
+
+**Status:** Complete as of September 17, 2026. The OVHcloud VPS is running patched Ubuntu 24.04.5 LTS with key-only `beaconadmin` administration, UFW, Fail2ban, Docker Engine 29.8.1, Docker Compose v5.5.1, NGINX, synchronized UTC time, and verified post-reboot service recovery. See `docs/PHASE_2.md` for evidence, port exposure, the accepted post-baseline snapshot exception, and temporary limitations.
 
 ### Goal
 Prepare a clean, maintainable Docker host.

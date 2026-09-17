@@ -314,3 +314,7 @@ __pycache__/
 docs/__pycache__/
 docs/env/
 docker-compose.yaml
+
+# Local-only operational credentials and connection state
+.local-secrets/
+.phase2_known_hosts

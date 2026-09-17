@@ -9,11 +9,12 @@ Review these documents first when planning or performing Beacon Remote work.
 | Document | Description |
 |---|---|
 | [`ProjectIndex.md`](ProjectIndex.md) | Master index of repository documentation, document purposes, and recommended reading order. |
-| [`docs/PROJECT_PLAN.md`](docs/PROJECT_PLAN.md) | Active Beacon Remote project brief and source of truth. Version 8 defines the product vision, requirements, philosophy, implementation phases, development conventions, and acceptance criteria, including the MSP hierarchy, quick-support workflow, clipboard behavior, temporary UAC elevation, and unified endpoint experience. |
+| [`docs/PROJECT_PLAN.md`](docs/PROJECT_PLAN.md) | Active Beacon Remote project brief and source of truth. Version 9 defines the product vision, requirements, philosophy, implementation phases, development conventions, and acceptance criteria, including the completed Docker-host baseline and the MSP hierarchy, quick-support workflow, clipboard behavior, temporary UAC elevation, and unified endpoint experience. |
 | [`docs/PHASE_0.md`](docs/PHASE_0.md) | Completed repository-bootstrap record covering Beacon naming, repository and branch structure, the upstream baseline, licensing, the Customer → Site → Device decision, validation, and the Phase 0 exit checklist. |
 | [`docs/PHASE_1.md`](docs/PHASE_1.md) | Completed infrastructure-discovery and environment-design record covering the OVH VPS inventory, host design, test/production isolation, Ubuntu target, DNS/TLS/NGINX plan, backups, and the Phase 2 handoff. |
+| [`docs/PHASE_2.md`](docs/PHASE_2.md) | Completed clean-rebuild and Docker-host baseline record covering Ubuntu 24.04, SSH administration, UFW, Docker/Compose, NGINX, Fail2ban, NTP, disk, backups, exposed ports, reboot validation, and accepted limitations. |
 | [`docs/decisions/0001-msp-hierarchy.md`](docs/decisions/0001-msp-hierarchy.md) | Architecture Decision Record establishing Customer → Site → Device as the fixed operational hierarchy, with tags for cross-cutting organization. Records the rationale, rejected alternative, consequences, security guardrails, and MeshCentral mapping. |
-| [`CHANGELOG.md`](CHANGELOG.md) | Beacon-specific changelog, separate from upstream history. Its current `Unreleased` section records work through Phases 0–1 and notes that no functional MeshCentral customization has occurred yet. |
+| [`CHANGELOG.md`](CHANGELOG.md) | Beacon-specific changelog, separate from upstream history. Its current `Unreleased` section records work through Phase 2 and notes that no functional MeshCentral customization has occurred yet. |
 | [`UPSTREAM.md`](UPSTREAM.md) | Records the official MeshCentral source, pinned baseline and tag, Beacon branch model and remotes, upstream-update procedure, and license-preservation requirements. |
 
 ### Recommended Reading Order
@@ -44,4 +45,3 @@ These are inherited MeshCentral documentation, support references, packaging dat
 | [`.github/ISSUE_TEMPLATE/bug_report.md`](.github/ISSUE_TEMPLATE/bug_report.md) | GitHub template for filing bug reports. |
 | [`.github/ISSUE_TEMPLATE/feature_request.md`](.github/ISSUE_TEMPLATE/feature_request.md) | GitHub template for proposing features. |
 | [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) | Contributor checklist and template presented when creating a pull request. |
-

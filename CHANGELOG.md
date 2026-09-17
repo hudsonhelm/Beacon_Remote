@@ -15,5 +15,8 @@ This file records changes made specifically for Beacon on top of upstream MeshCe
 - Began the Phase 1 OVHcloud infrastructure inventory and recorded the initial shared-host topology, Ubuntu LTS target, Cloudflare DNS-only plan, NGINX reverse proxy, public-port plan, and layered-backup approach.
 - Corrected Phase 1 to in progress after a strict audit identified unverified storage, bandwidth, OS, firewall, service, and administrative-access details.
 - Completed Phase 1 after verifying the current Ubuntu and OVHcloud network state, explicitly accepting unavailable storage-type and bandwidth details, and dispositioning the untouched guest configuration as superseded by the clean Phase 2 rebuild.
+- Completed Phase 2 by rebuilding the OVHcloud VPS on Ubuntu 24.04 LTS, installing all updates, creating the key-only `beaconadmin` sudo account, hardening SSH, enabling UFW and Fail2ban, and validating reboot recovery.
+- Installed and verified Docker Engine 29.8.1, Docker Compose v5.5.1, containerd, NGINX, time synchronization, unattended upgrades, troubleshooting utilities, Docker log rotation, and live restore.
+- Added the reproducible two-stage host setup script and documented the firewall, external port results, backup exception, local-only credential handling, and temporary host-baseline limitations in `docs/PHASE_2.md`.
 
 No functional MeshCentral customizations are included in this bootstrap change.
