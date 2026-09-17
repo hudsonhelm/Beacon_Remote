@@ -19,6 +19,15 @@
 
 The baseline tag points directly to the unmodified upstream commit. Beacon bootstrap documentation is committed after that baseline.
 
+## First Beacon Image
+
+- Hudson image: `beacon-remote:0.1.0-hudson.1`
+- Beacon source commit: `eb8869064d7771565368fecd7d578e657d3061d0`
+- Upstream base commit: `9f328938a355b778b037435dbc61ef89731f71ad`
+- Upstream package version: `1.2.5`
+
+The first image was built locally on the Beacon VPS and records these revisions in OCI labels. The upstream `master` branch was nine commits ahead when Phase 3 was performed, but none changed the upstream Docker implementation. Those unrelated commits were not silently merged into the pinned baseline.
+
 ## Remote Configuration
 
 ```text

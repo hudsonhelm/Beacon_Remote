@@ -1,6 +1,6 @@
 # Beacon / MeshCentral Fork — Project Bootstrap and v1 Plan
 
-> **Document version:** 9
+> **Document version:** 10
 > **Last updated:** September 17, 2026
 > **Status:** Active project brief / source of truth
 >
@@ -28,6 +28,7 @@
 | **v7** | September 15, 2026 | Corrected Phase 1 to in progress after a strict audit found that the design was complete but several required OVHcloud inventory fields remained unverified. |
 | **v8** | September 15, 2026 | Closed Phase 1 after explicitly accepting the unavailable contracted storage-type and bandwidth details and dispositioning the untouched guest state as not applicable because Phase 2 will perform a clean reinstall. |
 | **v9** | September 17, 2026 | Completed Phase 2: rebuilt the OVHcloud VPS on patched Ubuntu 24.04 LTS, established key-only non-root administration, hardened SSH and UFW, installed and reboot-validated Docker/Compose and NGINX, and documented the backup exception and exposed ports in `docs/PHASE_2.md`. |
+| **v10** | September 17, 2026 | Completed Phase 3: added traceable Hudson image metadata and a reproducible smoke-test build, built `beacon-remote:0.1.0-hudson.1` from Beacon commit `eb886906`, and verified the image starts successfully on the prepared VPS. |
 
 ---
 
@@ -349,6 +350,8 @@ Prepare a clean, maintainable Docker host.
 ---
 
 ## Phase 3 — Build Beacon From Our Fork
+
+**Status:** Complete as of September 17, 2026. The Hudson-controlled image `beacon-remote:0.1.0-hudson.1` was built on the prepared VPS from Beacon commit `eb8869064d7771565368fecd7d578e657d3061d0`, launched successfully in an isolated loopback HTTPS smoke test, and verified to carry its exact Beacon and upstream source revisions in OCI labels. See `docs/PHASE_3.md` for evidence and deferred pre-v1 registry automation.
 
 ### Goal
 The first deployed copy must come from Hudson's fork.

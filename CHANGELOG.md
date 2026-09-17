@@ -18,5 +18,7 @@ This file records changes made specifically for Beacon on top of upstream MeshCe
 - Completed Phase 2 by rebuilding the OVHcloud VPS on Ubuntu 24.04 LTS, installing all updates, creating the key-only `beaconadmin` sudo account, hardening SSH, enabling UFW and Fail2ban, and validating reboot recovery.
 - Installed and verified Docker Engine 29.8.1, Docker Compose v5.5.1, containerd, NGINX, time synchronization, unattended upgrades, troubleshooting utilities, Docker log rotation, and live restore.
 - Added the reproducible two-stage host setup script and documented the firewall, external port results, backup exception, local-only credential handling, and temporary host-baseline limitations in `docs/PHASE_2.md`.
+- Completed Phase 3 by adding OCI source/version metadata to the inherited Docker build and a reproducible image build and HTTPS smoke-test script.
+- Built and verified the Hudson-controlled `beacon-remote:0.1.0-hudson.1` image from Beacon commit `eb8869064d7771565368fecd7d578e657d3061d0` and upstream MeshCentral baseline `9f328938a355b778b037435dbc61ef89731f71ad`.
 
 No functional MeshCentral customizations are included in this bootstrap change.
