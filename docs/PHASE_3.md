@@ -50,12 +50,13 @@ The VPS build completed successfully. MeshCentral 1.2.5 responded over the loopb
 
 The inherited npm dependency installation reported three moderate-severity audit findings and deprecation notices for inherited packages. Phase 3 made no dependency changes because that would mix an upstream dependency/security update into the image-provenance phase. These findings must be evaluated through the planned dependency and security review before v1; no critical build failure was reported.
 
-## Deferred Items and Phase 4 Handoff
+## Deferred Items and Phase 3.5 Handoff
 
 - GitHub Actions/GHCR publication remains required before v1, but the project plan explicitly permits the initial image to be built locally or on the server.
 - The image currently exists only in the VPS Docker image store; it is not a portable backup or registry artifact.
-- Test and production Compose projects, persistent volumes, databases, secrets, TLS proxy configuration, administrator setup, and application backups belong to Phases 4 and 5.
-- The current build is the slim upstream-default variant and does not preinstall a database client. Phase 4 must select the database and build variant before creating the persistent test environment.
+- Test and production Compose projects, persistent volumes, databases, secrets, TLS proxy configuration, administrator setup, and application backups belong to Phases 4 and 5, but Phase 3.5 must pass before either persistent environment is created.
+- The current build is the slim upstream-default variant and does not preinstall a database client. Phase 4 must select the database and build variant before creating the persistent test environment, after Phase 3.5 passes.
+- The successful smoke-test image still carries upstream user-facing identity. Phase 3.5 must establish the approved Beacon Remote, Beacon Agent, and Beacon Assistant presentation before that image becomes the basis of a persistent staging or production deployment.
 - The stale local OpenSSH host-key entry created by the Phase 2 reinstall still requires trusted fingerprint reconciliation before routine administration; Phase 3 verification used the documented IP and key with an isolated host-key bypass.
 
 None of these items prevents Phase 3 from closing. The Phase 3 exit criteria are satisfied: the image builds from Hudson's repository, launches successfully, and identifies the exact source commit used.

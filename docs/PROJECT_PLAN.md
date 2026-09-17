@@ -1,12 +1,13 @@
 # Beacon / MeshCentral Fork — Project Bootstrap and v1 Plan
 
-> **Document version:** 10
+> **Document version:** 11
 > **Last updated:** September 17, 2026
 > **Status:** Active project brief / source of truth
 >
 > **Purpose:** This document is intended to be pasted or provided to the initial chat in a new Codex project. Treat it as the starting project brief and working source of truth until Nelson changes it.
 >
-> **Product name:** **Beacon**
+> **Product family:** **Beacon**
+> **Remote-management product:** **Beacon Remote**
 > **Remote-management repository:** **`hudsonhelm/Beacon_Remote`**
 > **Foundation:** MeshCentral fork
 > **Primary goal:** Get a useful, live, self-hosted remote-management platform running immediately, then improve it incrementally based on real Hudson Helm support work.
@@ -29,6 +30,7 @@
 | **v8** | September 15, 2026 | Closed Phase 1 after explicitly accepting the unavailable contracted storage-type and bandwidth details and dispositioning the untouched guest state as not applicable because Phase 2 will perform a clean reinstall. |
 | **v9** | September 17, 2026 | Completed Phase 2: rebuilt the OVHcloud VPS on patched Ubuntu 24.04 LTS, established key-only non-root administration, hardened SSH and UFW, installed and reboot-validated Docker/Compose and NGINX, and documented the backup exception and exposed ports in `docs/PHASE_2.md`. |
 | **v10** | September 17, 2026 | Completed Phase 3: added traceable Hudson image metadata and a reproducible smoke-test build, built `beacon-remote:0.1.0-hudson.1` from Beacon commit `eb886906`, and verified the image starts successfully on the prepared VPS. |
+| **v11** | September 17, 2026 | Added Phase 3.5 as a hard pre-deployment gate for baseline Beacon Remote identity, defined the Beacon product-family and component names, and re-scoped Phase 7 to later visual polish and cohesive product identity. |
 
 ---
 
@@ -398,10 +400,66 @@ Exact version format can be adjusted before first release.
 
 ---
 
+## Phase 3.5 — Baseline Beacon Remote Identity
+
+### Goal
+Ensure Hudson Helm never creates a persistent staging or production environment that presents itself to technicians or customers as MeshCentral. This is a baseline product-identity gate, not the later visual-polish phase.
+
+### Required Naming
+
+- **Beacon** is the product family.
+- **Beacon Remote** is this remote-management product.
+- **Beacon Agent** is the managed endpoint agent.
+- **Beacon Assistant** is the tray and support-assistant component.
+
+Use the full component-appropriate name in user-facing text. Do not use **Beacon** alone as a substitute for **Beacon Remote** when referring to this product.
+
+### Required User-Facing Identity
+
+During normal technician and customer operation, the product must not expose **MeshCentral**, **MeshAgent**, or **MeshCentral Assistant** branding. Replace those names with **Beacon Remote**, **Beacon Agent**, or **Beacon Assistant** as appropriate across:
+
+- product, page, browser, login, and header titles;
+- installer and client presentation;
+- notifications, prompts, and support-session UI;
+- logos, icons, and favicon;
+- generated downloads and installers, including customer-visible file names and labels;
+- Windows Apps & Features and uninstall entries;
+- Windows Services;
+- Start Menu and tray presentation;
+- installer dialogs; and
+- executable metadata where practical.
+
+Preserve copyright notices, license text, and upstream attribution wherever legally or technically required. Internal source, package, executable, storage, database, configuration, and protocol identifiers may remain unchanged when renaming them would create needless upstream divergence or compatibility risk, provided they are not ordinarily exposed as product branding.
+
+### Implementation Rules
+
+- Centralize branding values and assets behind configuration or a small, documented branding layer.
+- Prefer existing upstream branding/configuration hooks before source changes.
+- Avoid broad string replacement or unnecessary internal renaming.
+- Record every Hudson-specific source customization and keep it isolated enough for practical upstream merges.
+- Treat generated artifacts and Windows-installed presentation as part of the same naming contract as the web interface.
+
+### Acceptance Criteria
+
+- A normal technician completing routine operator tasks does not encounter **MeshCentral**, **MeshAgent**, or **MeshCentral Assistant** product branding.
+- A normal customer installing or running persistent or temporary support components does not encounter those upstream product names during ordinary use.
+- The web UI, generated downloads/installers, Windows installation surfaces, endpoint prompts, support-session UI, and readily visible executable metadata use the approved Beacon Remote component names.
+- Required legal notices and upstream attribution remain intact and accessible.
+- Branding is centralized/configurable, survives a clean rebuild, and does not require a high-conflict upstream fork.
+- Any unavoidable user-visible upstream name is documented with its legal or technical reason and explicitly accepted before the gate passes.
+- Phase 3.5 evidence and exceptions are recorded in `docs/PHASE_3_5.md`.
+- **Phase 4 cannot begin, and no persistent staging or production environment may be created, until every Phase 3.5 acceptance criterion passes.**
+
+---
+
 ## Phase 4 — Live Test/Staging Environment
 
 ### Goal
 Bring up a persistent environment where changes can be safely tested before production.
+
+### Entry Gate
+
+Phase 3.5 must be complete. Do not deploy a persistent test/staging environment while ordinary operation still presents upstream MeshCentral, MeshAgent, or MeshCentral Assistant branding.
 
 ### Requirements
 
@@ -483,7 +541,7 @@ Production must use its own:
 - Nelson can enroll a Windows test computer.
 - Nelson can successfully operate the endpoint remotely.
 
-At this point, Beacon is already a usable product even if visual customization is minimal.
+At this point, Beacon Remote is already a usable product even if later visual polish is still minimal.
 
 ---
 
@@ -591,23 +649,21 @@ Prioritize by:
 
 ---
 
-## Phase 7 — Minimum Branding and Product Identity
+## Phase 7 — Visual Polish and Cohesive Product Identity
 
 ### Goal
-Make the deployment recognizably Beacon without creating a maintenance nightmare.
+Polish the already-correct Phase 3.5 Beacon Remote identity into a cohesive, professional product experience based on lessons from real use. Baseline removal of MeshCentral, MeshAgent, and MeshCentral Assistant branding must not be deferred to this phase.
 
 ### Likely Changes
 
-- Product title
-- Beacon name
-- Hudson Helm logo/branding
-- favicon
-- login-page identity
-- basic terminology
+- cohesive layout, typography, color, and visual hierarchy
+- refined Hudson Helm and Beacon product-family presentation
+- consistent component imagery and asset treatment
+- polished login, operator, and customer-facing surfaces
 - support/contact links
-- installer/download naming where practical
-- endpoint-facing prompts where appropriate
-- operator-facing title/version information
+- refined installer, download, endpoint-prompt, and support-session presentation
+- consistent operator-facing title/version placement
+- accessibility and responsive-behavior improvements where needed
 
 ### Rules
 
@@ -618,7 +674,8 @@ Make the deployment recognizably Beacon without creating a maintenance nightmare
 
 ### Exit Criteria
 
-- An operator/customer can clearly tell this is Beacon.
+- Beacon Remote presents a cohesive, professional identity across its major technician and customer surfaces.
+- Phase 3.5 naming and de-MeshCentral requirements remain satisfied.
 - Branding changes survive rebuild/redeploy.
 - Upstream merge difficulty remains low.
 
@@ -1269,7 +1326,7 @@ These are intentionally unresolved.
 - Exact implementation of temporary-session UAC/elevation
 - Whether the first one-time support workflow will use MeshCentral Assistant or another upstream mechanism
 - Exact server-side/session-code mechanism for the six-digit support flow
-- Whether any agent binary rebranding is required before v1
+- Exact executable-metadata changes that are practical without creating needless upstream divergence
 - How MeshAgent and Assistant lifecycle/update behavior will be presented as one Beacon installation
 
 Do not guess silently on infrastructure/security decisions that depend on these answers.
@@ -1280,7 +1337,10 @@ Do not guess silently on infrastructure/security decisions that depend on these 
 
 Until Nelson changes them:
 
-- Product name: **Beacon**
+- Product family: **Beacon**
+- Remote-management product: **Beacon Remote**
+- Managed endpoint agent: **Beacon Agent**
+- Tray/support assistant: **Beacon Assistant**
 - Remote-management repository: **`hudsonhelm/Beacon_Remote`**
 - Future module repositories use the **`Beacon_<Module>`** naming convention.
 - Parent/business: **Hudson Helm**

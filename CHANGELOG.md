@@ -20,5 +20,8 @@ This file records changes made specifically for Beacon on top of upstream MeshCe
 - Added the reproducible two-stage host setup script and documented the firewall, external port results, backup exception, local-only credential handling, and temporary host-baseline limitations in `docs/PHASE_2.md`.
 - Completed Phase 3 by adding OCI source/version metadata to the inherited Docker build and a reproducible image build and HTTPS smoke-test script.
 - Built and verified the Hudson-controlled `beacon-remote:0.1.0-hudson.1` image from Beacon commit `eb8869064d7771565368fecd7d578e657d3061d0` and upstream MeshCentral baseline `9f328938a355b778b037435dbc61ef89731f71ad`.
+- Added Phase 3.5, **Baseline Beacon Remote Identity**, as a hard gate before any persistent staging or production environment.
+- Defined **Beacon** as the product family, **Beacon Remote** as this product, **Beacon Agent** as the managed endpoint agent, and **Beacon Assistant** as the tray/support assistant.
+- Re-scoped Phase 7 from baseline de-MeshCentral branding to later visual polish and cohesive product identity.
 
 No functional MeshCentral customizations are included in this bootstrap change.
