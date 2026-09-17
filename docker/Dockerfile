@@ -70,6 +70,22 @@ RUN jq '.dependencies += {"modern-syslog": "1.2.0", "telegram": "2.26.22"}' pack
 
 FROM node-base AS finalizer
 
+ARG BEACON_VERSION="dev"
+ARG BEACON_REVISION="unknown"
+ARG BEACON_BUILD_DATE="unknown"
+ARG BEACON_UPSTREAM_VERSION="1.2.5"
+ARG BEACON_UPSTREAM_REVISION="9f328938a355b778b037435dbc61ef89731f71ad"
+
+LABEL org.opencontainers.image.title="Beacon Remote" \
+    org.opencontainers.image.description="Hudson Helm's Beacon Remote build of MeshCentral" \
+    org.opencontainers.image.source="https://github.com/hudsonhelm/Beacon_Remote" \
+    org.opencontainers.image.version="${BEACON_VERSION}" \
+    org.opencontainers.image.revision="${BEACON_REVISION}" \
+    org.opencontainers.image.created="${BEACON_BUILD_DATE}" \
+    org.opencontainers.image.licenses="Apache-2.0" \
+    com.hudsonhelm.beacon.upstream.version="${BEACON_UPSTREAM_VERSION}" \
+    com.hudsonhelm.beacon.upstream.revision="${BEACON_UPSTREAM_REVISION}"
+
 # copy files from previous layer
 COPY --from=dep-compiler /opt/meshcentral/meshcentral /opt/meshcentral/meshcentral
 
