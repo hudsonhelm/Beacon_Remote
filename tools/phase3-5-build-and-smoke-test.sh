@@ -27,7 +27,11 @@ cleanup() {
 }
 trap cleanup EXIT
 
-node tools/check-phase3-5.cjs
+host_node_available=false
+if command -v node >/dev/null 2>&1; then
+    node tools/check-phase3-5.cjs
+    host_node_available=true
+fi
 cleanup
 
 build_date="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
@@ -39,6 +43,15 @@ docker build \
     --build-arg BEACON_UPSTREAM_REVISION="$upstream_revision" \
     -t "$image_tag" \
     -f docker/Dockerfile .
+
+if [[ "$host_node_available" == false ]]; then
+    docker run --rm \
+        --entrypoint node \
+        -v "$PWD:/work:ro" \
+        -w /work \
+        "$image_tag" \
+        tools/check-phase3-5.cjs
+fi
 
 declare -A expected_labels=(
     [org.opencontainers.image.version]="$version"
