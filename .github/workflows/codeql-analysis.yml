@@ -30,6 +30,7 @@ jobs:
         with:
           output: codeql-results
           upload: never
+          upload-database: false
 
       - name: Verify SARIF report
         shell: bash
