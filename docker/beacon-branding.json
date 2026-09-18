@@ -1,0 +1,54 @@
+{
+  "domains": {
+    "": {
+      "siteStyle": 3,
+      "showModernUIToggle": false,
+      "title": "Beacon Remote",
+      "title2": "Hudson Helm",
+      "titlePicture": "beacon-remote-header.png",
+      "loginPicture": "beacon-remote-login.png",
+      "pwaLogo": "beacon-remote-pwa.png",
+      "footer": "Beacon Remote by Hudson Helm",
+      "consentMessages": {
+        "Title": "Beacon Remote",
+        "Desktop": "Allow {0} to access this computer using Beacon Remote?",
+        "Terminal": "Allow {0} to open a remote terminal using Beacon Remote?",
+        "Files": "Allow {0} to access files using Beacon Remote?"
+      },
+      "notificationMessages": {
+        "Title": "Beacon Remote",
+        "Desktop": "{0} started a remote desktop session.",
+        "Terminal": "{0} started a remote terminal session.",
+        "Files": "{0} started a remote file session."
+      },
+      "agentCustomization": {
+        "displayName": "Beacon Agent",
+        "description": "Beacon Remote background service",
+        "companyName": "Hudson Helm",
+        "serviceName": "beaconagent",
+        "installText": "Install Beacon Agent to allow this computer to be managed through Beacon Remote.",
+        "image": "beacon-agent.png",
+        "fileName": "BeaconAgent",
+        "foregroundColor": "#FFFFFF",
+        "backgroundColor": "#003366"
+      },
+      "agentFileInfo": {
+        "icon": "beacon-agent.ico",
+        "fileDescription": "Beacon Agent",
+        "internalName": "BeaconAgent",
+        "originalFilename": "BeaconAgent.exe",
+        "productName": "Beacon Agent"
+      },
+      "assistantCustomization": {
+        "title": "Beacon Assistant",
+        "image": "beacon-assistant.png",
+        "fileName": "BeaconAssistant"
+      },
+      "androidCustomization": {
+        "title": "Beacon Agent",
+        "subtitle": "Beacon Remote",
+        "image": "beacon-agent.png"
+      }
+    }
+  }
+}

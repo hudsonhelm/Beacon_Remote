@@ -2,7 +2,7 @@
 
 ## Status
 
-Not started. This phase is a hard gate before Phase 4 and before any persistent staging or production application environment is created.
+In progress. The approved Beacon family assets and centralized Docker branding layer are being integrated and validated. This phase remains a hard gate before Phase 4 and before any persistent staging or production application environment is created.
 
 Phase 3 proved that Hudson Helm can build and start a traceable image from this fork. The resulting smoke-test image retains upstream user-facing identity and is not approved for persistent deployment. Phase 3.5 must establish the baseline Beacon Remote identity first.
 

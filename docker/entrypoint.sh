@@ -26,6 +26,33 @@ function test_url() {
     fi
 }
 
+function apply_beacon_branding() {
+    local branding_config="/opt/meshcentral/beacon-branding.json"
+    local brand_root="/opt/meshcentral/beacon-brand"
+    local data_root
+    local web_override="/opt/meshcentral/meshcentral-web/public"
+    data_root="$(dirname "$CONFIG_FILE")"
+
+    echo "Applying mandatory Beacon Remote identity..."
+    mkdir -p "$data_root" "$web_override"
+
+    cp "$brand_root/Web/beacon-header-450x66.png" "$data_root/beacon-remote-header.png"
+    cp "$brand_root/Web/beacon-login-light-512.png" "$data_root/beacon-remote-login.png"
+    cp "$brand_root/PNG/Application/beacon-app-512.png" "$data_root/beacon-remote-pwa.png"
+    cp "$brand_root/PNG/Application/beacon-app-128.png" "$data_root/beacon-agent.png"
+    cp "$brand_root/PNG/Application/beacon-app-128.png" "$data_root/beacon-assistant.png"
+    cp "$brand_root/beacon.ico" "$data_root/beacon-agent.ico"
+
+    cp "$brand_root/Browser/favicon.ico" "$web_override/favicon.ico"
+    cp "$brand_root/Browser/favicon-16.png" "$web_override/favicon-16x16.png"
+    cp "$brand_root/Browser/favicon-32.png" "$web_override/favicon-32x32.png"
+    cp "$brand_root/Browser/favicon-180.png" "$web_override/favicon-303x303.png"
+    cp "$brand_root/Browser/favicon-512.png" "$web_override/android-chrome-512x512.png"
+
+    jq -s '.[0] * .[1]' "$CONFIG_FILE" "$branding_config" > temp_config.json
+    mv temp_config.json "$CONFIG_FILE"
+}
+
 
 function dynamic_config() {
     # BEGIN DATABASE CONFIGURATION FIELDS
@@ -397,6 +424,12 @@ if [[ ${DYNAMIC_CONFIG,,} =~ ^(true|yes)$ ]]; then
     echo "-------------------------------------------------------------"
 else
     echo "Leaving config as-is. Dynamic Configuration is off."
+fi
+
+if [[ ${BEACON_BRANDING,,} =~ ^(true|yes)$ ]]; then
+    apply_beacon_branding
+else
+    echo "WARNING: Beacon Remote identity is disabled. This mode is for isolated upstream comparison only and must not be used for persistent environments."
 fi
 
 if [[ ${INSTALL_STYLISHUI,,} =~ ^(true|yes)$ ]]; then

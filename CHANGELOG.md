@@ -23,5 +23,6 @@ This file records changes made specifically for Beacon on top of upstream MeshCe
 - Added Phase 3.5, **Baseline Beacon Remote Identity**, as a hard gate before any persistent staging or production environment.
 - Defined **Beacon** as the product family, **Beacon Remote** as this product, **Beacon Agent** as the managed endpoint agent, and **Beacon Assistant** as the tray/support assistant.
 - Re-scoped Phase 7 from baseline de-MeshCentral branding to later visual polish and cohesive product identity.
+- Began Phase 3.5 implementation with the approved Beacon asset package, a mandatory container branding overlay, Beacon Remote web identity, Beacon Agent installer/service/executable metadata, Beacon Assistant presentation, branded consent and notification messages, and targeted modern-UI naming changes.
 
 No functional MeshCentral customizations are included in this bootstrap change.

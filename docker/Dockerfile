@@ -92,7 +92,8 @@ COPY --from=dep-compiler /opt/meshcentral/meshcentral /opt/meshcentral/meshcentr
 # environment variables
 ENV NODE_ENV="production" \
     CONFIG_FILE="/opt/meshcentral/meshcentral-data/config.json" \
-    DYNAMIC_CONFIG="false"
+    DYNAMIC_CONFIG="false" \
+    BEACON_BRANDING="true"
 
 # environment variables for the above defined MeshCentral Config.json. Can be done like that following: https://docs.docker.com/reference/dockerfile/#env
 ENV ALLOW_PLUGINS="false" \
@@ -231,5 +232,7 @@ VOLUME /opt/meshcentral/meshcentral-backups
 # Copy images from Git repo, place it before ending so recompilation can make good use of cache.
 COPY ./docker/entrypoint.sh  /opt/meshcentral/entrypoint.sh
 COPY ./docker/config.json.template /opt/meshcentral/config.json.template
+COPY ./docker/beacon-branding.json /opt/meshcentral/beacon-branding.json
+COPY ./Images/Brand /opt/meshcentral/beacon-brand
 
 ENTRYPOINT  ["/bin/bash", "/opt/meshcentral/entrypoint.sh"]

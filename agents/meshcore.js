@@ -703,8 +703,8 @@ function diagnosticAgent_installCheck(install) {
         require('service-manager').manager.installService(
             {
                 name: 'meshagentDiagnostic',
-                displayName: "Mesh Agent Diagnostic Service",
-                description: "Mesh Agent Diagnostic Service",
+                displayName: "Beacon Agent Diagnostic Service",
+                description: "Beacon Agent Diagnostic Service",
                 servicePath: process.execPath,
                 parameters: ['-recovery']
                 //files: [{ newName: 'diagnostic.js', _buffer: Buffer.from('LyoNCkNvcHlyaWdodCAyMDE5IEludGVsIENvcnBvcmF0aW9uDQoNCkxpY2Vuc2VkIHVuZGVyIHRoZSBBcGFjaGUgTGljZW5zZSwgVmVyc2lvbiAyLjAgKHRoZSAiTGljZW5zZSIpOw0KeW91IG1heSBub3QgdXNlIHRoaXMgZmlsZSBleGNlcHQgaW4gY29tcGxpYW5jZSB3aXRoIHRoZSBMaWNlbnNlLg0KWW91IG1heSBvYnRhaW4gYSBjb3B5IG9mIHRoZSBMaWNlbnNlIGF0DQoNCiAgICBodHRwOi8vd3d3LmFwYWNoZS5vcmcvbGljZW5zZXMvTElDRU5TRS0yLjANCg0KVW5sZXNzIHJlcXVpcmVkIGJ5IGFwcGxpY2FibGUgbGF3IG9yIGFncmVlZCB0byBpbiB3cml0aW5nLCBzb2Z0d2FyZQ0KZGlzdHJpYnV0ZWQgdW5kZXIgdGhlIExpY2Vuc2UgaXMgZGlzdHJpYnV0ZWQgb24gYW4gIkFTIElTIiBCQVNJUywNCldJVEhPVVQgV0FSUkFOVElFUyBPUiBDT05ESVRJT05TIE9GIEFOWSBLSU5ELCBlaXRoZXIgZXhwcmVzcyBvciBpbXBsaWVkLg0KU2VlIHRoZSBMaWNlbnNlIGZvciB0aGUgc3BlY2lmaWMgbGFuZ3VhZ2UgZ292ZXJuaW5nIHBlcm1pc3Npb25zIGFuZA0KbGltaXRhdGlvbnMgdW5kZXIgdGhlIExpY2Vuc2UuDQoqLw0KDQp2YXIgaG9zdCA9IHJlcXVpcmUoJ3NlcnZpY2UtaG9zdCcpLmNyZWF0ZSgnbWVzaGFnZW50RGlhZ25vc3RpYycpOw0KdmFyIFJlY292ZXJ5QWdlbnQgPSByZXF1aXJlKCdNZXNoQWdlbnQnKTsNCg0KaG9zdC5vbignc2VydmljZVN0YXJ0JywgZnVuY3Rpb24gKCkNCnsNCiAgICBjb25zb2xlLnNldERlc3RpbmF0aW9uKGNvbnNvbGUuRGVzdGluYXRpb25zLkxPR0ZJTEUpOw0KICAgIGhvc3Quc3RvcCA9IGZ1bmN0aW9uKCkNCiAgICB7DQogICAgICAgIHJlcXVpcmUoJ3NlcnZpY2UtbWFuYWdlcicpLm1hbmFnZXIuZ2V0U2VydmljZSgnbWVzaGFnZW50RGlhZ25vc3RpYycpLnN0b3AoKTsNCiAgICB9DQogICAgUmVjb3ZlcnlBZ2VudC5vbignQ29ubmVjdGVkJywgZnVuY3Rpb24gKHN0YXR1cykNCiAgICB7DQogICAgICAgIGlmIChzdGF0dXMgPT0gMCkNCiAgICAgICAgew0KICAgICAgICAgICAgY29uc29sZS5sb2coJ0RpYWdub3N0aWMgQWdlbnQ6IFNlcnZlciBjb25uZWN0aW9uIGxvc3QuLi4nKTsNCiAgICAgICAgICAgIHJldHVybjsNCiAgICAgICAgfQ0KICAgICAgICBjb25zb2xlLmxvZygnRGlhZ25vc3RpYyBBZ2VudDogQ29ubmVjdGlvbiBFc3RhYmxpc2hlZCB3aXRoIFNlcnZlcicpOw0KICAgICAgICBzdGFydCgpOw0KICAgIH0pOw0KfSk7DQpob3N0Lm9uKCdub3JtYWxTdGFydCcsIGZ1bmN0aW9uICgpDQp7DQogICAgaG9zdC5zdG9wID0gZnVuY3Rpb24gKCkNCiAgICB7DQogICAgICAgIHByb2Nlc3MuZXhpdCgpOw0KICAgIH0NCiAgICBjb25zb2xlLmxvZygnTm9uIFNlcnZpY2UgTW9kZScpOw0KICAgIFJlY292ZXJ5QWdlbnQub24oJ0Nvbm5lY3RlZCcsIGZ1bmN0aW9uIChzdGF0dXMpDQogICAgew0KICAgICAgICBpZiAoc3RhdHVzID09IDApDQogICAgICAgIHsNCiAgICAgICAgICAgIGNvbnNvbGUubG9nKCdEaWFnbm9zdGljIEFnZW50OiBTZXJ2ZXIgY29ubmVjdGlvbiBsb3N0Li4uJyk7DQogICAgICAgICAgICByZXR1cm47DQogICAgICAgIH0NCiAgICAgICAgY29uc29sZS5sb2coJ0RpYWdub3N0aWMgQWdlbnQ6IENvbm5lY3Rpb24gRXN0YWJsaXNoZWQgd2l0aCBTZXJ2ZXInKTsNCiAgICAgICAgc3RhcnQoKTsNCiAgICB9KTsNCn0pOw0KaG9zdC5vbignc2VydmljZVN0b3AnLCBmdW5jdGlvbiAoKSB7IHByb2Nlc3MuZXhpdCgpOyB9KTsNCmhvc3QucnVuKCk7DQoNCg0KZnVuY3Rpb24gc3RhcnQoKQ0Kew0KDQp9Ow0K', 'base64') }]
@@ -2103,7 +2103,7 @@ function handleServerCommand(data) {
                 if (data.tag == 'info') { sendConsoleText(JSON.stringify(data, null, 2)); }
                 if (data.tag == 'install') {
                     data.func = function (options, success) {
-                        sendConsoleText('Download of MeshCentral Assistant ' + (success ? 'succeed' : 'failed'));
+                        sendConsoleText('Download of Beacon Assistant ' + (success ? 'succeed' : 'failed'));
                         if (success) {
                             // TODO: Install & Run
                         }
@@ -2694,7 +2694,7 @@ function terminal_end()
 function terminal_consent_ask(ws) {
     ws.write(JSON.stringify({ ctrlChannel: '102938', type: 'console', msg: "Waiting for user to grant access...", msgid: 1 }));
     var consentMessage = currentTranslation['terminalConsent'].replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username);
-    var consentTitle = 'MeshCentral';
+    var consentTitle = 'Beacon Remote';
     if (ws.httprequest.soptions != null) {
         if (ws.httprequest.soptions.consentTitle != null) { consentTitle = ws.httprequest.soptions.consentTitle; }
         if (ws.httprequest.soptions.consentMsgTerminal != null) { consentMessage = ws.httprequest.soptions.consentMsgTerminal.replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username); }
@@ -2797,7 +2797,7 @@ function terminal_promise_connection_resolved(term)
     {
         // User Notifications is required
         var notifyMessage = currentTranslation['terminalNotify'].replace(/\{0\}/g, this.ws.httprequest.realname ? this.ws.httprequest.realname : this.ws.httprequest.username);
-        var notifyTitle = "MeshCentral";
+        var notifyTitle = "Beacon Remote";
         if (this.ws.httprequest.soptions != null)
         {
             if (this.ws.httprequest.soptions.notifyTitle != null) { notifyTitle = this.ws.httprequest.soptions.notifyTitle; }
@@ -3084,7 +3084,7 @@ function kvm_consent_ok(ws) {
         // User Notifications is required
         MeshServerLogEx(35, null, "Started remote desktop with toast notification (" + ws.httprequest.remoteaddr + ")", ws.httprequest);
         var notifyMessage = currentTranslation['desktopNotify'].replace(/\{0\}/g, ws.httprequest.realname);
-        var notifyTitle = "MeshCentral";
+        var notifyTitle = "Beacon Remote";
         if (ws.httprequest.soptions != null) {
             if (ws.httprequest.soptions.notifyTitle != null) { notifyTitle = ws.httprequest.soptions.notifyTitle; }
             if (ws.httprequest.soptions.notifyMsgDesktop != null) { notifyMessage = ws.httprequest.soptions.notifyMsgDesktop.replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username); }
@@ -3135,7 +3135,7 @@ function kvm_consent_ask(ws){
     // Send a console message back using the console channel, "\n" is supported.
     ws.write(JSON.stringify({ ctrlChannel: '102938', type: 'console', msg: "Waiting for user to grant access...", msgid: 1 }));
     var consentMessage = currentTranslation['desktopConsent'].replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username);
-    var consentTitle = 'MeshCentral';
+    var consentTitle = 'Beacon Remote';
     if (ws.httprequest.soptions != null) {
         if (ws.httprequest.soptions.consentTitle != null) { consentTitle = ws.httprequest.soptions.consentTitle; }
         if (ws.httprequest.soptions.consentMsgDesktop != null) { consentMessage = ws.httprequest.soptions.consentMsgDesktop.replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username); }
@@ -3200,7 +3200,7 @@ function kvm_consentpromise_resolved(always)
     {
         // User Notifications is required
         var notifyMessage = currentTranslation['desktopNotify'].replace(/\{0\}/g, this.ws.httprequest.realname);
-        var notifyTitle = "MeshCentral";
+        var notifyTitle = "Beacon Remote";
         if (this.ws.httprequest.soptions != null)
         {
             if (this.ws.httprequest.soptions.notifyTitle != null) { notifyTitle = this.ws.httprequest.soptions.notifyTitle; }
@@ -3262,7 +3262,7 @@ function files_consent_ok(ws){
         // User Notifications is required
         MeshServerLogEx(42, null, "Started remote files with toast notification (" + ws.httprequest.remoteaddr + ")", ws.httprequest);
         var notifyMessage = currentTranslation['fileNotify'].replace(/\{0\}/g, ws.httprequest.realname);
-        var notifyTitle = "MeshCentral";
+        var notifyTitle = "Beacon Remote";
         if (ws.httprequest.soptions != null) {
             if (ws.httprequest.soptions.notifyTitle != null) { notifyTitle = ws.httprequest.soptions.notifyTitle; }
             if (ws.httprequest.soptions.notifyMsgFiles != null) { notifyMessage = ws.httprequest.soptions.notifyMsgFiles.replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username); }
@@ -3278,7 +3278,7 @@ function files_consent_ask(ws){
     // Send a console message back using the console channel, "\n" is supported.
     ws.write(JSON.stringify({ ctrlChannel: '102938', type: 'console', msg: "Waiting for user to grant access...", msgid: 1 }));
     var consentMessage = currentTranslation['fileConsent'].replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username);
-    var consentTitle = 'MeshCentral';
+    var consentTitle = 'Beacon Remote';
 
     if (ws.httprequest.soptions != null) {
         if (ws.httprequest.soptions.consentTitle != null) { consentTitle = ws.httprequest.soptions.consentTitle; }
@@ -3329,7 +3329,7 @@ function files_consentpromise_resolved(always)
     {
         // User Notifications is required
         var notifyMessage = currentTranslation['fileNotify'].replace(/\{0\}/g, this.ws.httprequest.realname);
-        var notifyTitle = "MeshCentral";
+        var notifyTitle = "Beacon Remote";
         if (this.ws.httprequest.soptions != null)
         {
             if (this.ws.httprequest.soptions.notifyTitle != null) { notifyTitle = this.ws.httprequest.soptions.notifyTitle; }
@@ -3364,7 +3364,7 @@ function registry_consent_ok(ws){
     if (ws.httprequest.consent && (ws.httprequest.consent & 0x0080)) {
         MeshServerLogEx(165, null, "Started remote registry with toast notification (" + ws.httprequest.remoteaddr + ")", ws.httprequest);
         var notifyMessage = currentTranslation['registryNotify'].replace(/\{0\}/g, ws.httprequest.realname);
-        var notifyTitle = "MeshCentral";
+        var notifyTitle = "Beacon Remote";
         if (ws.httprequest.soptions != null) {
             if (ws.httprequest.soptions.notifyTitle != null) { notifyTitle = ws.httprequest.soptions.notifyTitle; }
             if (ws.httprequest.soptions.notifyMsgRegistry != null) { notifyMessage = ws.httprequest.soptions.notifyMsgRegistry.replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username); }
@@ -3379,7 +3379,7 @@ function registry_consent_ok(ws){
 function registry_consent_ask(ws){
     ws.write(JSON.stringify({ ctrlChannel: '102938', type: 'console', msg: "Waiting for user to grant access...", msgid: 1 }));
     var consentMessage = currentTranslation['registryConsent'].replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username);
-    var consentTitle = 'MeshCentral';
+    var consentTitle = 'Beacon Remote';
     if (ws.httprequest.soptions != null) {
         if (ws.httprequest.soptions.consentTitle != null) { consentTitle = ws.httprequest.soptions.consentTitle; }
         if (ws.httprequest.soptions.consentMsgRegistry != null) { consentMessage = ws.httprequest.soptions.consentMsgRegistry.replace(/\{0\}/g, ws.httprequest.realname).replace(/\{1\}/g, ws.httprequest.username); }
@@ -3423,7 +3423,7 @@ function registry_consentpromise_resolved(always)
     this.ws.write(JSON.stringify({ ctrlChannel: '102938', type: 'console', msg: null }));
     if (this.ws.httprequest.consent && (this.ws.httprequest.consent & 0x0080)) {
         var notifyMessage = currentTranslation['registryNotify'].replace(/\{0\}/g, this.ws.httprequest.realname);
-        var notifyTitle = "MeshCentral";
+        var notifyTitle = "Beacon Remote";
         if (this.ws.httprequest.soptions != null) {
             if (this.ws.httprequest.soptions.notifyTitle != null) { notifyTitle = this.ws.httprequest.soptions.notifyTitle; }
             if (this.ws.httprequest.soptions.notifyMsgRegistry != null) { notifyMessage = this.ws.httprequest.soptions.notifyMsgRegistry.replace(/\{0\}/g, this.ws.httprequest.realname).replace(/\{1\}/g, this.ws.httprequest.username); }
@@ -5033,7 +5033,7 @@ function processConsoleCommand(cmd, args, rights, sessionid) {
                         // TODO: Uninstall
                     }
                 } else {
-                    response = "MeshCentral Assistant is not supported on this platform.";
+                    response = "Beacon Assistant is not supported on this platform.";
                 }
                 break;
             case 'userimage':
@@ -5779,10 +5779,10 @@ function processConsoleCommand(cmd, args, rights, sessionid) {
             case 'toast': {
                 if (args['_'].length < 1) { response = 'Proper usage: toast "message"'; } else {
                     if (require('MeshAgent')._tsid == null) {
-                        require('toaster').Toast('MeshCentral', args['_'][0]).then(sendConsoleText, sendConsoleText);
+                        require('toaster').Toast('Beacon Remote', args['_'][0]).then(sendConsoleText, sendConsoleText);
                     }
                     else {
-                        require('toaster').Toast('MeshCentral', args['_'][0], require('MeshAgent')._tsid).then(sendConsoleText, sendConsoleText);
+                        require('toaster').Toast('Beacon Remote', args['_'][0], require('MeshAgent')._tsid).then(sendConsoleText, sendConsoleText);
                     }
                 }
                 break;

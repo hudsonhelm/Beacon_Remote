@@ -1121,7 +1121,7 @@
                                 value="AutoConnect" onclick=autoConnectDesktop(event) onkeypress="return false"
                                 onkeydown="return false" style="display:none;margin-right:4px" />
                             <div class="btn-group dropdown-center me-1" id=connectbutton1span>
-                                <button type="button" class="btn btn-success btn-sm" id=connectbutton1 title="Connect using MeshAgent remote desktop" onclick=connectDesktop(event,3) onkeypress="return false" onkeydown="return false" disabled="disabled">Connect</button>
+                                <button type="button" class="btn btn-success btn-sm" id=connectbutton1 title="Connect using Beacon Agent remote desktop" onclick=connectDesktop(event,3) onkeypress="return false" onkeydown="return false" disabled="disabled">Connect</button>
                                 <button type="button" class="btn btn-success btn-sm dropdown-toggle dropdown-toggle-split" id=connectbutton1d data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="visually-hidden">Toggle Dropdown</span>
                                 </button>
@@ -1143,7 +1143,7 @@
                                     onclick=connectDesktop(event,2) onkeypress="return false" onkeydown="return false"
                                     disabled="disabled">HW Connect</button></span>
                             <div class="btn-group dropdown-center me-1" id=disconnectbutton1span>
-                                <button type="button" class="btn btn-danger btn-sm" id=disconnectbutton1 title="Connect using MeshAgent remote desktop" onclick=connectDesktop(event,0) onkeypress="return false" onkeydown="return false">Disconnect</button>
+                                <button type="button" class="btn btn-danger btn-sm" id=disconnectbutton1 title="Connect using Beacon Agent remote desktop" onclick=connectDesktop(event,0) onkeypress="return false" onkeydown="return false">Disconnect</button>
                                 <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" id=diconnectbutton1d data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="visually-hidden">Toggle Dropdown</span>
                                 </button>
@@ -1344,7 +1344,7 @@
                                         onkeydown="return false" style="display:none"><i class="fa-solid fa-play"></i>
                                         AutoConnect</button>
                                     <div class="btn-group dropdown-center me-1" id=connectbutton2span>
-                                        <button type="button" class="btn btn-success btn-sm" id=connectbutton2 title="Connect using MeshAgent remote desktop" onclick=connectTerminal(event,1) onkeypress="return false" onkeydown="return false" disabled="disabled">Connect</button>
+                                        <button type="button" class="btn btn-success btn-sm" id=connectbutton2 title="Connect using Beacon Agent remote desktop" onclick=connectTerminal(event,1) onkeypress="return false" onkeydown="return false" disabled="disabled">Connect</button>
                                         <button type="button" class="btn btn-success btn-sm dropdown-toggle dropdown-toggle-split" id=connectbutton2d data-bs-toggle="dropdown" aria-expanded="false" onclick=newContextMenu(event,1)><span class="visually-hidden">Toggle Dropdown</span></button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" onclick="cmtermaction(1,0,event)"><b>Admin Shell</b></a></li>
@@ -1363,7 +1363,7 @@
                                         </ul>
                                     </div>
                                     <div class="btn-group dropdown-center me-1" id=connectbutton2sspan>
-                                        <button type="button" class="btn btn-success btn-sm" id=connectbutton2s title="Connect using MeshAgent remote desktop" onclick=connectTerminal(event,3) onkeypress="return false" onkeydown="return false" disabled="disabled">SSH Connect</button>
+                                        <button type="button" class="btn btn-success btn-sm" id=connectbutton2s title="Connect using Beacon Agent remote desktop" onclick=connectTerminal(event,3) onkeypress="return false" onkeydown="return false" disabled="disabled">SSH Connect</button>
                                         <button type="button" class="btn btn-success btn-sm dropdown-toggle dropdown-toggle-split" id=connectbutton2sd data-bs-toggle="dropdown" aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" onclick="cmsshportaction(1,event)">Alternate Port</a></li>
@@ -1471,7 +1471,7 @@
                                     class="btn btn-primary btn-sm me-1" type="button" style="display:none"><i
                                         class="fa-solid fa-play"></i> AutoConnect</button>
                                 <div class="btn-group dropdown-center me-1" id=p13Connectspan>
-                                    <button type="button" class="btn btn-success btn-sm" id=p13Connect title="Connect using MeshAgent remote desktop" onclick=connectFiles(event,1) onkeypress="return false" onkeydown="return false" disabled="disabled">Connect</button>
+                                    <button type="button" class="btn btn-success btn-sm" id=p13Connect title="Connect using Beacon Agent remote desktop" onclick=connectFiles(event,1) onkeypress="return false" onkeydown="return false" disabled="disabled">Connect</button>
                                     <button type="button" class="btn btn-success btn-sm dropdown-toggle dropdown-toggle-split" id=p13Connectdrop data-bs-toggle="dropdown" aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" onclick="cmconnectfilesaction()">Ask Consent</a></li>
@@ -1479,7 +1479,7 @@
                                 </div>
                                 <button id=p13Disconnect class="btn btn-danger btn-sm me-1" onclick=connectFiles(event) type="button">Disconnect</button>
                                 <div class="btn-group dropdown-center me-1" id=p13Connectsspan>
-                                    <button type="button" class="btn btn-success btn-sm" id=p13Connects title="Connect using MeshAgent remote desktop" onclick=connectFiles(event,2) onkeypress="return false" onkeydown="return false" disabled="disabled">SFTP Connect</button>
+                                    <button type="button" class="btn btn-success btn-sm" id=p13Connects title="Connect using Beacon Agent remote desktop" onclick=connectFiles(event,2) onkeypress="return false" onkeydown="return false" disabled="disabled">SFTP Connect</button>
                                     <button type="button" class="btn btn-success btn-sm dropdown-toggle dropdown-toggle-split" id=p13Connectsdrop data-bs-toggle="dropdown" aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" onclick="cmsshportaction(1,event)">Alternate Port</a></li>
@@ -3974,12 +3974,12 @@
                         x += addHtmlValue2('<label><input id=d2updateCheck2 type=checkbox class="form-check-input me-2" onclick=server_showVersionDlgUpdate()' + (((message.tags.latest == "Unknown") || (message.tags.current == message.tags.latest) || ((features & 2048) == 0)) ? ' disabled' : '') + ' /> ' + "Latest Version" + '</label>', '<b>' + EscapeHtml(message.tags.latest) + '</b>');
                         x += '</div>';
                         if (((message.tags.current == message.tags.latest) && (message.tags.current == message.tags.stable)) || ((features & 2048) == 0)) {
-                            setModalContent('xxAddAgent', "MeshCentral Version", x);
+                            setModalContent('xxAddAgent', "Beacon Remote Version", x);
                             showModal('xxAddAgentModal', 'idx_dlgOkButton');
                         } else {
                             x += '<hr />' + "Check and click OK to start server self-update.";
                             xxdialogTag = message.tags;
-                            setModalContent('xxAddAgent', "MeshCentral Version", x);
+                            setModalContent('xxAddAgent', "Beacon Remote Version", x);
                             showModal('xxAddAgentModal', 'idx_dlgOkButton', function () {
                                 server_showVersionDlgEx(2, message.tags);
                             });
@@ -3997,7 +3997,7 @@
                             var x = '<div class="dialogText dialogTextLog"><pre id=d2ServerErrorsLogPre>' + EscapeHtml(message.data) + '</pre></div>';
                             x += '<br /><div style=float:right><i role=button class="fa-fw fa-solid fa-download fa-sm" title="' + "Download error log" + '" onclick=d2CopyServerErrorsToClip()></i></div>';
                             x += '<div><label><input id=d2clearErrorsCheck type=checkbox class="form-check-input me-2" onclick=server_showErrorsDlgUpdate() /> ' + "Check and click OK to clear error log." + '</label></div>';
-                            setModalContent('xxAddAgent', "MeshCentral Server Errors", x);
+                            setModalContent('xxAddAgent', "Beacon Remote Server Errors", x);
                             showModal('xxAddAgentModal', 'idx_dlgOkButton', server_showErrorsDlgEx);
                             server_showErrorsDlgUpdate();
                         }
@@ -5269,7 +5269,7 @@
             x += '<label><input id=d2c13 type=checkbox class="form-check-input me-2"' + ((deviceViewSettings.devsCols.indexOf('windowsfirewall') >= 0) ? ' checked' : '') + '>' + "Windows Firewall" + '</label><br />';
             x += '<label><input id=d2c14 type=checkbox class="form-check-input me-2"' + ((deviceViewSettings.devsCols.indexOf('lastbootuptime') >= 0) ? ' checked' : '') + '>' + "Last Boot Up Time" + '</label><br />';
             x += '<label><input id=d2c16 type=checkbox class="form-check-input me-2"' + ((deviceViewSettings.devsCols.indexOf('idletime') >= 0)?' checked':'') + '>' + "Idle Time" + '</label><br />';
-            x += '<label><input id=d2c1 type=checkbox class="form-check-input me-2"' + ((deviceViewSettings.devsCols.indexOf('links') >= 0) ? ' checked' : '') + '>' + "MeshCentral Router Links" + '</label><br />';
+            x += '<label><input id=d2c1 type=checkbox class="form-check-input me-2"' + ((deviceViewSettings.devsCols.indexOf('links') >= 0) ? ' checked' : '') + '>' + "Beacon Remote Router Links" + '</label><br />';
             x += '<label><input id=d2c2 type=checkbox class="form-check-input me-2"' + ((deviceViewSettings.devsCols.indexOf('user') >= 0) ? ' checked' : '') + '>' + "Logged in users" + '</label><br />';
             x += '<label><input id=d2c3 type=checkbox class="form-check-input me-2"' + ((deviceViewSettings.devsCols.indexOf('ip') >= 0) ? ' checked' : '') + '>' + "Agent IP address" + '</label><br />';
             x += '<label><input id=d2c4 type=checkbox class="form-check-input me-2"' + ((deviceViewSettings.devsCols.indexOf('conn') >= 0) ? ' checked' : '') + '>' + "Server Connectivity" + '</label><br />';
@@ -5788,7 +5788,7 @@
                 }
                 if ((userinfo.siteadmin == 0xFFFFFFFF) || ((userinfo.siteadmin & 128) == 0)) {
                     r += '<a href=# onclick=\'return p10showMeshCmdDialog(0)\' style=cursor:pointer title="' + "Download MeshCmd, a command line tool that performs many functions." + '">' + "MeshCmd" + '</a>&nbsp';
-                    if ((navigator.platform.toLowerCase() == 'win32') || (navigator.platform.toLowerCase() == 'macintel')) { r += '<a href=# onclick=\'return p10showMeshRouterDialog()\' style=cursor:pointer title="' + "Download MeshCentral Router, a TCP port mapping tool." + '">' + "Router" + '</a>&nbsp'; }
+                    if ((navigator.platform.toLowerCase() == 'win32') || (navigator.platform.toLowerCase() == 'macintel')) { r += '<a href=# onclick=\'return p10showMeshRouterDialog()\' style=cursor:pointer title="' + "Download Beacon Remote Router, a TCP port mapping tool." + '">' + "Router" + '</a>&nbsp'; }
                 }
                 r += '</div><div style=height:60px></div>';
 
@@ -6013,12 +6013,12 @@
                                 states.push('<span title="' + "IP-KVM port is connected and ready for use." + '">' + "IP-KVM" + '</span>');
                             }
                         } else {
-                            states.push('<span title="' + "Mesh agent is connected and ready for use." + '">' + "Agent" + '</span>');
+                            states.push('<span title="' + "Beacon Agent is connected and ready for use." + '">' + "Agent" + '</span>');
                         }
                     }
                     if ((node.conn & 2) != 0) { states.push('<span title="' + "Intel&reg; AMT CIRA is connected and ready for use." + '">' + "CIRA" + '</span>'); }
                     else if ((node.conn & 4) != 0) { states.push('<span title="' + "Intel&reg; AMT is routable." + '">' + "AMT" + '</span>'); }
-                    if ((node.conn & 8) != 0) { states.push('<span title="' + "Mesh agent is reachable using another agent as relay." + '">' + "Relay" + '</span>'); }
+                    if ((node.conn & 8) != 0) { states.push('<span title="' + "Beacon Agent is reachable using another agent as relay." + '">' + "Relay" + '</span>'); }
                     if ((node.conn & 16) != 0) { states.push('<span title="' + "MQTT connection to the device is active." + '">' + "MQTT" + '</span>'); }
                 }
                 if (node.mtype == 3) {
@@ -6110,7 +6110,7 @@
             }
         }
 
-        // Return HTML with a list of MeshCentral Router links
+        // Return HTML with a list of Beacon Remote Router links
         function getShortRouterLinks(node) {
             var x = '', meshrights = GetNodeRights(node);
 
@@ -6466,7 +6466,7 @@
                     desk.contype = 2;
                     multiDesktop[nodeid] = desk;
                 } else if (contype == 1) {
-                    // Setup the Mesh Agent remote desktop
+                    // Setup the Beacon Agent remote desktop
                     desk = CreateAgentRedirect(meshserver, CreateAgentRemoteDesktop('kvmid_' + shortid), serverPublicNamePort, authCookie, authRelayCookie, domainUrl);
                     desk.m.UseExtendedKeyFlag = (node.agent.id < 5); // Only use extended keys on Windows agents for now
                     desk.m.mouseCursorActive(xxcurrentView == 11);
@@ -6509,8 +6509,8 @@
                 }
             }
             if ((mesh.mtype == 2) && ((userinfo.siteadmin == 0xFFFFFFFF) || ((userinfo.siteadmin & 4096) == 0))) { // Agent device group
-                r += ' <a href=# role="button" title="' + "Add a new computer to this device group by installing the mesh agent." + '" onclick=\'return addAgentToMesh("' + mesh._id + '")\'>' + "Add Agent" + '</a>';
-                if ((features & 2) == 0) { r += ' <a href=# role="button" title="' + "Invite someone to install the mesh agent on this device group." + '" onclick=\'return inviteAgentToMesh("' + mesh._id + '")\'>' + "Invite" + '</a>'; }
+                r += ' <a href=# role="button" title="' + "Add a new computer to this device group by installing the Beacon Agent." + '" onclick=\'return addAgentToMesh("' + mesh._id + '")\'>' + "Add Agent" + '</a>';
+                if ((features & 2) == 0) { r += ' <a href=# role="button" title="' + "Invite someone to install the Beacon Agent on this device group." + '" onclick=\'return inviteAgentToMesh("' + mesh._id + '")\'>' + "Invite" + '</a>'; }
             }
             if (mesh.mtype == 3) { // Local device group
                 r += ' <a href=# role="button" title="' + "Add device located on the local network." + '" onclick=\'return addLocalDeviceToMesh("' + mesh._id + '")\'>' + "Add Device" + '</a>';
@@ -6740,10 +6740,10 @@
             var x = '', mesh = meshes[meshid];
             if (features & 64) {
                 x += addHtmlFormFloating("Invitation Type", '<select id=d2InviteType onchange=d2ChangedInviteType() class=form-select><option value=0>' + "Link invitation" + '</option><option value=1>' + "Email invitation" + '</option></select>') + '<hr />';
-                x += '<div id=emailInviteDiv style=display:none>' + format("Invite someone to install the mesh agent. An email with be sent with the link to the mesh agent installation for the \"{0}\" device group.", EscapeHtml(mesh.name)) + '<br /><br />';
+                x += '<div id=emailInviteDiv style=display:none>' + format("Invite someone to install the Beacon Agent. An email with be sent with the link to the Beacon Agent installation for the \"{0}\" device group.", EscapeHtml(mesh.name)) + '<br /><br />';
                 x += addHtmlFormFloating("Name (optional)", '<input id=agentInviteName value="" placeholder="Name (optional)" class="form-control" maxlength=64 />');
                 x += addHtmlFormFloating("Email", '<input id=agentInviteEmail placeholder="' + "example@email.com" + '" class="form-control" onkeyup=validateAgentInvite() />');
-                x += addHtmlFormFloating("Operating System", '<select id=agentInviteNameOs onchange=d2ChangedInviteType() class=form-select><option value=4>' + "Send installation link" + '</option><option value=0 selected>' + "Any supported" + '</option><option value=1>' + "Windows only" + '</option><option value=3>' + "Apple macOS only" + '</option><option value=2>' + "Linux only" + '</option><option value=5>' + "MeshCentral Assistant" + '</option></select>');
+                x += addHtmlFormFloating("Operating System", '<select id=agentInviteNameOs onchange=d2ChangedInviteType() class=form-select><option value=4>' + "Send installation link" + '</option><option value=0 selected>' + "Any supported" + '</option><option value=1>' + "Windows only" + '</option><option value=3>' + "Apple macOS only" + '</option><option value=2>' + "Linux only" + '</option><option value=5>' + "Beacon Assistant" + '</option></select>');
                 x += '<div id=d2agentexpirediv>';
                 x += addHtmlFormFloating("Link Expiration", '<select id=agentInviteExpire class=form-select><option value=1>' + "1 hour" + '</option><option value=8>' + "8 hours" + '</option><option value=24>' + "1 day" + '</option><option value=168>' + "1 week" + '</option><option value=5040>' + "1 month" + '</option><option value=0>' + "Unlimited" + '</option></select>');
                 x += '</div>';
@@ -6753,9 +6753,9 @@
                 x += addHtmlFormFloating("Message" + ' ' + "(optional)", '<textarea id="agentInviteMessage" class="form-control" style="height:100px;resize:none;" maxlength="1024"></textarea>');
                 x += '</div>';
             }
-            x += '<div id=urlInviteDiv>' + format("Invite someone to install the mesh agent by sharing an invitation link. This link points the user to installation instructions for the \"{0}\" device group. The link is public and no account for this server is needed.", EscapeHtml(mesh.name)) + '<br /><br />';
+            x += '<div id=urlInviteDiv>' + format("Invite someone to install the Beacon Agent by sharing an invitation link. This link points the user to installation instructions for the \"{0}\" device group. The link is public and no account for this server is needed.", EscapeHtml(mesh.name)) + '<br /><br />';
             x += addHtmlFormFloating("Link Expiration", '<select id=d2inviteExpire class=form-select onchange=d2RequestInvitationLink()><option value=1>' + "1 hour" + '</option><option value=8>' + "8 hours" + '</option><option value=24>' + "1 day" + '</option><option value=168>' + "1 week" + '</option><option value=5040>' + "1 month" + '</option><option value=0>' + "Unlimited" + '</option></select>');
-            x += addHtmlFormFloating("Agents", '<select id=d2agentType class=form-select onchange=d2ChangedInviteType()><option value=0>' + "All Available Agents" + '</option><option value=1>' + "Windows MeshAgent" + '</option><option value=2>' + "Linux MeshAgent" + '</option><option value=4>' + "MacOS MeshAgent" + '</option><option value=8>' + "MeshCentral Assistant" + '</option><option value=16>' + "Android MeshAgent" + '</option></select>');
+            x += addHtmlFormFloating("Agents", '<select id=d2agentType class=form-select onchange=d2ChangedInviteType()><option value=0>' + "All Available Agents" + '</option><option value=1>' + "Windows Beacon Agent" + '</option><option value=2>' + "Linux Beacon Agent" + '</option><option value=4>' + "MacOS Beacon Agent" + '</option><option value=8>' + "Beacon Assistant" + '</option><option value=16>' + "Android Beacon Agent" + '</option></select>');
             x += '<div id=d2agentInstallTypeDiv>';
             x += addHtmlFormFloating("Installation Type", '<select id=d2agentInviteType class=form-select onchange=d2RequestInvitationLink()><option value=0>' + "Background and interactive" + '</option><option value=2>' + "Background only" + '</option><option value=1>' + "Interactive only" + '</option></select>');
             x += '</div>';
@@ -6812,7 +6812,7 @@
 
             var opts = '<select id=aginsSelect onchange=addAgentToMeshClick() class=form-select><option value=0>' + "Windows" + '</option><option value=1>' + "Linux / BSD" + '</option><option value=5>' + "Linux / BSD / macOS Binary Installer" + '</option><option value=2>' + "Apple macOS" + '</option>';
             if ((features & 2) == 0) { opts += '<option value=6>' + "Mobile device" + '</option>'; } // Don't display mobile setup in LAN mode.
-            opts += '<option value=7>' + "MeshCentral Assistant" + '</option>';
+            opts += '<option value=7>' + "Beacon Assistant" + '</option>';
             opts += '<option value=3>' + "Windows (Uninstall)" + '</option><option value=4>' + "Linux / BSD (Uninstall)" + '</option><option value=8>' + "Apple macOS (Uninstall)" + '</option></select>';
             x += addHtmlFormFloating("Operating System", opts);
 
@@ -6841,10 +6841,10 @@
             meshfilename = meshfilename.split('\\').join('').split('/').join('').split(':').join('').split('*').join('').split('?').join('').split('"').join('').split('<').join('').split('>').join('').split('|').join('').split(' ').join('').split('\'').join('');
 
             // Windows agent install
-            x += '<div id=agins_windows>' + format("To add a new computer to the device group of \"{0}\", download the mesh agent and install it onto the designated computer to manage. This agent has server and device group information embedded within it.", EscapeHtml(mesh.name)) + '<br /><br />';
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline id=aginsw32lnk name="meshagents?id=3&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "x86 32bit version of the MeshAgent" + '">' + "Windows x86-32 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows x86 32bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=3&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline id=aginsw64lnk name="meshagents?id=4&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "x86 64bit version of the MeshAgent" + '">' + "Windows x86-64 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows x86 64bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=4&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline id=aginswa64lnk name="meshagents?id=43&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "ARM 64bit version of the MeshAgent" + '">' + "Windows ARM-64 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows ARM 64bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=43&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
+            x += '<div id=agins_windows>' + format("To add a new computer to the device group of \"{0}\", download the Beacon Agent and install it onto the designated computer to manage. This agent has server and device group information embedded within it.", EscapeHtml(mesh.name)) + '<br /><br />';
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline id=aginsw32lnk name="meshagents?id=3&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "x86 32bit version of the Beacon Agent" + '">' + "Windows x86-32 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows x86 32bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=3&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline id=aginsw64lnk name="meshagents?id=4&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "x86 64bit version of the Beacon Agent" + '">' + "Windows x86-64 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows x86 64bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=4&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline id=aginswa64lnk name="meshagents?id=43&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "ARM 64bit version of the Beacon Agent" + '">' + "Windows ARM-64 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows ARM 64bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=43&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
             if (debugmode > 0) { x += addHtmlValue("Settings File", '<a id=aginswmshlnk name="meshsettings?id=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '">' + format("{0} settings (.msh)", EscapeHtml(mesh.name)) + '</a>'); }
             x += '</div>';
 
@@ -6854,55 +6854,55 @@
             x += '<div style=font-size:x-small;float:right>' + "* For BSD, run \"pkg install wget sudo bash\" beforehand." + '</div><a style=text-decoration:none title="' + "Copy to clipboard" + '" onclick=copyAgentIdValue("agins_linux_area")>' + "Copy" + ' <i class="fa-regular fa-clipboard" style=cursor:pointer></i></a></div>';
 
             // macOS agent install
-            x += '<div id=agins_osx style=display:none>' + format("To add a new computer to the device group of \"{0}\", download the mesh agent and install it onto the designated computer to manage. This agent installer has server and device group information embedded within it.", EscapeHtml(mesh.name)) + '<br /><br />';
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline onclick=downloadFile("meshosxagent?id=16&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '") title="' + "x86-64bit version of macOS Mesh Agent" + '">' + "macOS x86-64bit" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy macOS agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshosxagent?id=16&meshid=' + meshid.split('/')[2] + '",0)></i>', ['col-md-4', 'col-md-8']);
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline onclick=downloadFile("meshosxagent?id=29&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '") title="' + "ARM 64bit version of macOS Mesh Agent" + '">' + "macOS ARM (64bit)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy macOS agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshosxagent?id=29&meshid=' + meshid.split('/')[2] + '",0)></i>', ['col-md-4', 'col-md-8']);
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline onclick=downloadFile("meshosxagent?id=10005&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '") title="' + "Universal version of macOS Mesh Agent" + '">' + "macOS (Universal)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy macOS agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshosxagent?id=10005&meshid=' + meshid.split('/')[2] + '",0)></i>', ['col-md-4', 'col-md-8']);
+            x += '<div id=agins_osx style=display:none>' + format("To add a new computer to the device group of \"{0}\", download the Beacon Agent and install it onto the designated computer to manage. This agent installer has server and device group information embedded within it.", EscapeHtml(mesh.name)) + '<br /><br />';
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline onclick=downloadFile("meshosxagent?id=16&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '") title="' + "x86-64bit version of macOS Beacon Agent" + '">' + "macOS x86-64bit" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy macOS agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshosxagent?id=16&meshid=' + meshid.split('/')[2] + '",0)></i>', ['col-md-4', 'col-md-8']);
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline onclick=downloadFile("meshosxagent?id=29&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '") title="' + "ARM 64bit version of macOS Beacon Agent" + '">' + "macOS ARM (64bit)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy macOS agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshosxagent?id=29&meshid=' + meshid.split('/')[2] + '",0)></i>', ['col-md-4', 'col-md-8']);
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline onclick=downloadFile("meshosxagent?id=10005&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '") title="' + "Universal version of macOS Beacon Agent" + '">' + "macOS (Universal)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy macOS agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshosxagent?id=10005&meshid=' + meshid.split('/')[2] + '",0)></i>', ['col-md-4', 'col-md-8']);
             x += '</div>';
 
             // QR code agent install
-            x += '<div id=agins_qrcode style=display:none;min-height:180px><a id=agins_qrimage_a rel="noreferrer noopener" target=_blank><div id=agins_qrimage style=float:right;margin-left:10px;width:180px;height:180px;cursor:pointer></div></a><div>' + format("To add a mobile device to group \"{0}\", download the MeshAgent application and scan this QR code.", EscapeHtml(mesh.name)) + '</div>';
+            x += '<div id=agins_qrcode style=display:none;min-height:180px><a id=agins_qrimage_a rel="noreferrer noopener" target=_blank><div id=agins_qrimage style=float:right;margin-left:10px;width:180px;height:180px;cursor:pointer></div></a><div>' + format("To add a mobile device to group \"{0}\", download the Beacon Agent application and scan this QR code.", EscapeHtml(mesh.name)) + '</div>';
             x += '<table style=width:180px>';
             x += '<tr><td style=text-align:center><a title="' + "Google Play Store" + '"rel="noreferrer noopener" target=_blank href="https://play.google.com/store/apps/details?id=com.meshcentral.agent2"><img style=cursor:pointer src="images/google-play-140.png" width=140 srcset="images/google-play-280.png 2x" /></a></td></tr>';
             x += '<tr><td style=text-align:center><a title="' + "Amazon App Store" + '" rel="noreferrer noopener" target=_blank href="https://www.amazon.co.uk/gp/product/B097Z4Q7SK/"><img style=cursor:pointer src="images/amazon-appstore-140.png"  width=140 srcset="images/amazon-appstore-280.png 2x" /></a></td></tr>';
             x += '</table>';
-            x += addHtmlValue("Android APK", '<a class=text-decoration-underline onclick=downloadFile("meshagents?id=14' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '",null,true) title="' + "APK version of the MeshAgent" + '">' + "APK" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=14&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '")></i>');
+            x += addHtmlValue("Android APK", '<a class=text-decoration-underline onclick=downloadFile("meshagents?id=14' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '",null,true) title="' + "APK version of the Beacon Agent" + '">' + "APK" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=14&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '")></i>');
             x += '</div>'
 
-            // MeshCentral Assistant
-            x += '<div id=agins_assistant style=display:none><table><tr><td style=vertical-align:top><div>' + format("MeshCentral Assistant is a Windows tool that users can use to ask for help. Use the link below to download a version that will connect to device group \"{0}\".", EscapeHtml(mesh.name)) + '</div><div></div><br />';
-            x += '<a class=text-decoration-underline id=asinslnk name="meshagents?id=10006&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "MeshCentral Assistant for Windows" + '">' + "Assistant for Windows (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=10006&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '")></i>';
+            // Beacon Assistant
+            x += '<div id=agins_assistant style=display:none><table><tr><td style=vertical-align:top><div>' + format("Beacon Assistant is a Windows tool that users can use to ask for help. Use the link below to download a version that will connect to device group \"{0}\".", EscapeHtml(mesh.name)) + '</div><div></div><br />';
+            x += '<a class=text-decoration-underline id=asinslnk name="meshagents?id=10006&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "Beacon Assistant for Windows" + '">' + "Assistant for Windows (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=10006&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '")></i>';
             x += '</td><td><img id=agass_img1 src=images/assistant-100.png width=74 height=100 srcset="images/assistant-200.png 2x"><img id=agass_img2 src=images/assistant2-100.png width=74 height=100 srcset="images/assistant2-200.png 2x"></td></tr></table></div>';
 
-            // MeshCentral Assistant2
-            x += '<div id=agins_assistant2 style=display:none><table><tr><td style=vertical-align:top><div>' + "MeshCentral Assistant is a Windows tool that users can use to ask for help. Use the link below to download a version that will monitor the background agent." + '</div><div></div><br />';
-            x += '<a class=text-decoration-underline id=asinslnk2 name="meshagents?id=10006&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "MeshCentral Assistant for Windows" + '">' + "Assistant for Windows (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=10006&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '")></i>';
+            // Beacon Assistant2
+            x += '<div id=agins_assistant2 style=display:none><table><tr><td style=vertical-align:top><div>' + "Beacon Assistant is a Windows tool that users can use to ask for help. Use the link below to download a version that will monitor the background agent." + '</div><div></div><br />';
+            x += '<a class=text-decoration-underline id=asinslnk2 name="meshagents?id=10006&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "Beacon Assistant for Windows" + '">' + "Assistant for Windows (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=10006&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '")></i>';
             x += '</td><td><img src=images/assistant-100.png width=74 height=100 srcset="images/assistant-200.png 2x"></td></tr></table></div>';
 
             // Windows agent uninstall
-            x += '<div id=agins_windows_un style=display:none>' + "To remove a mesh agent, download the file below, run it and click \"Uninstall\"." + '<br /><br />';
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline id=aginsw32unlnk name="meshagents?id=3&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "x86 32bit version of the MeshAgent" + '">' + "Windows x86-32 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows x86 32bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=3&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline id=aginsw64unlnk name="meshagents?id=4&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "x86 64bit version of the MeshAgent" + '">' + "Windows x86-64 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows x86 64bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=4&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline id=aginswa64unlnk name="meshagents?id=43&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "ARM 64bit version of the MeshAgent" + '">' + "Windows ARM-64 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows ARM 64bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=43&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
+            x += '<div id=agins_windows_un style=display:none>' + "To remove a Beacon Agent, download the file below, run it and click \"Uninstall\"." + '<br /><br />';
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline id=aginsw32unlnk name="meshagents?id=3&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "x86 32bit version of the Beacon Agent" + '">' + "Windows x86-32 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows x86 32bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=3&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline id=aginsw64unlnk name="meshagents?id=4&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "x86 64bit version of the Beacon Agent" + '">' + "Windows x86-64 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows x86 64bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=4&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline id=aginswa64unlnk name="meshagents?id=43&meshid=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '" title="' + "ARM 64bit version of the Beacon Agent" + '">' + "Windows ARM-64 (.exe)" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy Windows ARM 64bit agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=43&meshid=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
             x += '</div>';
 
             // Linux agent uninstall
-            x += '<div id=agins_linux_un style=display:none>' + "To remove a mesh agent, run the following command. Root credentials will be needed." + '<br />';
+            x += '<div id=agins_linux_un style=display:none>' + "To remove a Beacon Agent, run the following command. Root credentials will be needed." + '<br />';
             x += '<textarea id=agins_linux_area_un rows=2 cols=20 readonly=readonly style=border-radius:4px;padding:6px;margin-top:4px;margin-bottom:4px;border:0;width:100%;resize:none;height:160px;overflow:auto;font-size:12px  class=form-control></textarea>';
             x += '<a style=text-decoration:none title="' + "Copy to clipboard" + '" onclick=copyAgentIdValue("agins_linux_area_un")>Copy <i class="fa-regular fa-clipboard" style=cursor:pointer></i></a></div>';
 
             // macOS agent uninstall
-            x += '<div id=agins_osx_un style=display:none>' + "To remove a mesh agent, download the file below, extract the ZIP archive, then right-click \"Uninstall.command\" and select \"Open\"." + '<br /><br />';
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline onclick=downloadFile("meshosxagent?id=10005&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '") title="' + "Universal version of macOS Mesh Agent" + '">macOS Agent (Universal)</a> <i class="fa-regular fa-clipboard" title="' + "Copy macOS agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshosxagent?id=10005&meshid=' + meshid.split('/')[2] + '",0)></i>', ['col-md-4', 'col-md-8']);
+            x += '<div id=agins_osx_un style=display:none>' + "To remove a Beacon Agent, download the file below, extract the ZIP archive, then right-click \"Uninstall.command\" and select \"Open\"." + '<br /><br />';
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline onclick=downloadFile("meshosxagent?id=10005&meshid=' + meshid.split('/')[2] + (urlargs.key ? ('&key=' + urlargs.key) : '') + '") title="' + "Universal version of macOS Beacon Agent" + '">macOS Agent (Universal)</a> <i class="fa-regular fa-clipboard" title="' + "Copy macOS agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshosxagent?id=10005&meshid=' + meshid.split('/')[2] + '",0)></i>', ['col-md-4', 'col-md-8']);
             x += '</div>';
 
             // Linux binary installer
             x += '<div id=agins_linux_inst style=display:none>' + "This is an executable on OSs with graphical user interfaces." + '<br /><br />' + "Apple macOS executables will need to be removed from quarantine by running 'xattr -r -d com.apple.quarantine meshagent'." + '<br /><br />' + "You need to run 'chmod +x meshagent', and then run this file." + '<br /><br />';
-            x += addHtmlValue("Mesh Agent", '<a class=text-decoration-underline id=aginsbinlnk name="meshagents?id=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '">' + "meshagent" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
+            x += addHtmlValue("Beacon Agent", '<a class=text-decoration-underline id=aginsbinlnk name="meshagents?id=' + meshid.split('/')[2] + '&installflags=0' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '">' + "meshagent" + '</a> <i class="fa-regular fa-clipboard" title="' + "Copy agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentUrl("meshagents?id=' + meshid.split('/')[2] + '&installflags=",1)></i>', ['col-md-4', 'col-md-8']);
             x += addHtmlValue("Command" + '&nbsp;<i class="fa-regular fa-clipboard" title="' + "Copy agent URL to clipboard" + '" style=cursor:pointer onclick=copyAgentIdValue("aginsbincmd")></i>', '<input id=aginsbincmd type=text class="form-control" readonly value=\'wget -O meshagent' + (((features & 0x80000000) != 0) ? ' --no-check-certificate' : '') + ' \"https://' + servername + portStr + domainUrl + 'meshagents?id=' + meshid.split('/')[2].split('$').join('%24').split('@').join('%40') + '\' />', ['col-md-4 d-flex align-items-center', 'col-md-8']);
             x += '</div>';
 
-            setModalContent('xxAddAgent', "Add Mesh Agent", x);
+            setModalContent('xxAddAgent', "Add Beacon Agent", x);
             showModal('xxAddAgentModal', 'idx_dlgOkButton');
 
             // Create the QR code
@@ -7140,12 +7140,12 @@
                             states.push('<span title="' + "IP-KVM port is up and ready for use." + '">' + "IP-KVM" + '</span>');
                         }
                     } else {
-                        states.push('<span title="' + "Mesh agent is connected and ready for use." + '">' + "Agent" + '</span>');
+                        states.push('<span title="' + "Beacon Agent is connected and ready for use." + '">' + "Agent" + '</span>');
                     }
                 }
                 if ((node.conn & 2) != 0) { states.push('<span title="' + "Intel&reg; AMT CIRA is connected and ready for use." + '">' + "CIRA" + '</span>'); }
                 else if ((node.conn & 4) != 0) { states.push('<span title="' + "Intel&reg; AMT is routable." + '">' + "AMT" + '</span>'); }
-                if ((node.conn & 8) != 0) { states.push('<span title="' + "Mesh agent is reachable using another agent as relay." + '">' + "Relay" + '</span>'); }
+                if ((node.conn & 8) != 0) { states.push('<span title="' + "Beacon Agent is reachable using another agent as relay." + '">' + "Relay" + '</span>'); }
                 if ((node.conn & 16) != 0) { states.push('<span title="' + "MQTT connection to the device is active." + '">' + "MQTT" + '</span>'); }
             }
             if ((node.pwr != null) && (node.pwr != 0)) { states.push(powerStateStrings[node.pwr]); }
@@ -7402,7 +7402,7 @@
             var op = Q('d2deviceop').value, title = Q('dp2notifyTitle').value, msg = Q('d2notifyMsg').value, chkNodeIds = getCheckedDevices(), timeout = parseFloat(Q('d2notifyTimeout').value);
             if (msg.length == 0) return;
             if (title == '') { title = decodeURIComponent('{{{extitle}}}'); }
-            if (title == '') { title = "MeshCentral"; }
+            if (title == '') { title = "Beacon Remote"; }
             if (isNaN(timeout)) { timeout = 2; }
             if (op == 1) { // MessageBox
                 for (var i = 0; i < chkNodeIds.length; i++) { meshserver.send({ action: 'msg', type: 'messagebox', nodeid: chkNodeIds[i], title: title, msg: msg, timeout: (timeout * 60000) }); }
@@ -8955,7 +8955,7 @@
                     if (node.porttype != null) { x += addDeviceAttribute("Port Type", node.porttype); }
                 }
 
-                // Attribute: Mesh Agent
+                // Attribute: Beacon Agent
                 if ((node.agent != null) && (node.agent.id != null) && (node.mtype == 3)) {
                     if (node.agent.id == 4) { x += addDeviceAttribute("Device Type", "Windows"); }
                     if (node.agent.id == 6) { x += addDeviceAttribute("Device Type", "Linux"); }
@@ -8966,7 +8966,7 @@
                     if (node.agent.ver != 0) { str += ' v' + node.agent.ver; }
                     if (node.agent.id == 14) { str = EscapeHtml(node.agent.core); }
                     if ((node.agent.root === false) && ((node.conn & 1) != 0)) { str += ', ' + "Restricted"; }
-                    x += addDeviceAttribute("Mesh Agent", str);
+                    x += addDeviceAttribute("Beacon Agent", str);
                 }
 
                 // Attribute: Intel AMT
@@ -9026,7 +9026,7 @@
                 }
 
                 if ((node.agent != null) && (node.agent.tag != null)) {
-                    // Attribute: Mesh Agent Tag
+                    // Attribute: Beacon Agent Tag
                     var tag = EscapeHtml(node.agent.tag);
                     if (tag.startsWith('mailto:')) { tag = '<a href="' + EscapeHtml(tag) + '">' + EscapeHtml(tag.substring(7)) + '</a>'; }
                     x += addDeviceAttribute("Agent Tag", tag);
@@ -9153,10 +9153,10 @@
                 var connectivity = node.conn;
                 if (connectivity && (connectivity > 1)) {
                     var cstate = [];
-                    if ((node.conn & 1) != 0) cstate.push('<span title="' + "Mesh agent is connected and ready for use." + '">' + "Mesh Agent" + '</span>');
+                    if ((node.conn & 1) != 0) cstate.push('<span title="' + "Beacon Agent is connected and ready for use." + '">' + "Beacon Agent" + '</span>');
                     if ((node.conn & 2) != 0) cstate.push('<span title="' + "Intel&reg; AMT CIRA is connected and ready for use." + '">' + "Intel&reg; AMT CIRA" + '</span>');
                     else if ((node.conn & 4) != 0) cstate.push('<span title="' + "Intel&reg; AMT is routable and ready for use." + '">' + "Intel&reg; AMT" + '</span>');
-                    if ((node.conn & 8) != 0) cstate.push('<span title="' + "Mesh agent is reachable using another agent as relay." + '">' + "Mesh Relay" + '</span>');
+                    if ((node.conn & 8) != 0) cstate.push('<span title="' + "Beacon Agent is reachable using another agent as relay." + '">' + "Relay" + '</span>');
                     if ((node.conn & 16) != 0) { cstate.push('<span title="' + "MQTT connection to the device is active." + '">' + "MQTT" + '</span>'); }
                     x += addDeviceAttribute("Connectivity", cstate.join(', '));
                 }
@@ -9272,19 +9272,19 @@
                         if ((node.agent.id > 0) && (node.agent.id < 5)) {
                             if (navigator.platform.toLowerCase() == 'win32') {
                                 if ((serverinfo.devicemeshrouterlinks == null) || (serverinfo.devicemeshrouterlinks.rdp != false)) {
-                                    x += '<a href=# cmenu=altPortContextMenu id=rdpMCRouterLink onclick=p10MCRouter("' + node._id + '",3) title="' + "Requires installation of MeshCentral Router" + '.">' + "RDP" + ((node.rdpport && (node.rdpport != 3389)) ? '/' + node.rdpport : '') + '</a>&nbsp;';
+                                    x += '<a href=# cmenu=altPortContextMenu id=rdpMCRouterLink onclick=p10MCRouter("' + node._id + '",3) title="' + "Requires installation of Beacon Remote Router" + '.">' + "RDP" + ((node.rdpport && (node.rdpport != 3389)) ? '/' + node.rdpport : '') + '</a>&nbsp;';
                                 }
                             }
                         }
                         if (node.agent.id > 4) {
                             if ((navigator.platform.toLowerCase() == 'win32') || (navigator.platform.toLowerCase() == 'macintel')) {
                                 if ((serverinfo.devicemeshrouterlinks == null) || (serverinfo.devicemeshrouterlinks.ssh != false)) {
-                                    x += '<a href=# cmenu=sshPortContextMenu onclick=p10MCRouter("' + node._id + '",4,' + (node.sshport ? node.sshport : 22) + ') title="' + "Requires installation of MeshCentral Router." + '">' + "SSH" + ((node.sshport && (node.sshport != 22)) ? '/' + node.sshport : '') + '</a>&nbsp;';
+                                    x += '<a href=# cmenu=sshPortContextMenu onclick=p10MCRouter("' + node._id + '",4,' + (node.sshport ? node.sshport : 22) + ') title="' + "Requires installation of Beacon Remote Router." + '">' + "SSH" + ((node.sshport && (node.sshport != 22)) ? '/' + node.sshport : '') + '</a>&nbsp;';
                                 }
                             }
                             if (navigator.platform.toLowerCase() == 'win32') {
                                 if ((serverinfo.devicemeshrouterlinks == null) || (serverinfo.devicemeshrouterlinks.scp != false)) {
-                                    x += '<a href=# cmenu=sshPortContextMenu onclick=p10MCRouter("' + node._id + '",5,' + (node.sshport ? node.sshport : 22) + ') title="' + "Requires installation of MeshCentral Router." + '">' + "SCP" + ((node.sshport && (node.sshport != 22)) ? '/' + node.sshport : '') + '</a>&nbsp;';
+                                    x += '<a href=# cmenu=sshPortContextMenu onclick=p10MCRouter("' + node._id + '",5,' + (node.sshport ? node.sshport : 22) + ') title="' + "Requires installation of Beacon Remote Router." + '">' + "SCP" + ((node.sshport && (node.sshport != 22)) ? '/' + node.sshport : '') + '</a>&nbsp;';
                                 }
                             }
                         }
@@ -9294,8 +9294,8 @@
                                     var r = serverinfo.devicemeshrouterlinks.extralinks[i], p = '\"' + r.protocol + '\"';;
                                     if (doesDeviceMatchFilterTags(node, r.filter)) {
                                         if (typeof r.protocol == 'number') { p = r.protocol; } else if (r.protocol == 'http') { p = 1; } else if (r.protocol == 'https') { p = 2; } else if (r.protocol == 'rdp') { p = 3; } else if (r.protocol == 'ssh') { p = 4; } else if (r.protocol == 'scp') { p = 5; } else if (r.protocol == 'mcrdesktop') { p = 6; } else if (r.protocol == 'mcrfiles') { p = 7; }
-                                        if (((p == 6) || (p == 7)) && (node.mtype != 2)) continue; // If this is not an agent device, don't show MeshCentral Router desktop/file links.
-                                        x += '<a href=# onclick=p10MCRouter("' + node._id + '",' + p + ',' + r.port + (r.ip ? (',\"' + r.ip + '\"') : ',null') + ',' + (r.localport ? r.localport : 0) + ') title="' + "Requires installation of MeshCentral Router." + '">' + r.name + '</a>&nbsp;';
+                                        if (((p == 6) || (p == 7)) && (node.mtype != 2)) continue; // If this is not an agent device, don't show Beacon Remote Router desktop/file links.
+                                        x += '<a href=# onclick=p10MCRouter("' + node._id + '",' + p + ',' + r.port + (r.ip ? (',\"' + r.ip + '\"') : ',null') + ',' + (r.localport ? r.localport : 0) + ') title="' + "Requires installation of Beacon Remote Router." + '">' + r.name + '</a>&nbsp;';
                                     }
                                 }
                             }
@@ -9374,7 +9374,7 @@
                 if (consoleRights) { setupConsole(); } else { if (panel == 15) { panel = 10; } }
 
                 // Show or hide the tabs
-                // mesh.mtype: 1 = Intel AMT only, 2 = Mesh Agent, 3 = Local Device
+                // mesh.mtype: 1 = Intel AMT only, 2 = Beacon Agent, 3 = Local Device
                 // node.agent.caps (bitmask): 1 = Desktop, 2 = Terminal, 4 = Files, 8 = Console
                 QV('MainDevDesktop', desktopAccess && ((((node.agent == null) && (node.intelamt != null) && ((typeof node.intelamt.sku !== 'number') || ((node.intelamt.sku & 8) != 0)))
                     || ((node.agent != null) && ((node.agent.caps == null) || ((node.agent.caps & 1) != 0) || (node.intelamt && (node.intelamt.state == 2)))) || ((node.mtype == 3) && ((node.agent.id == 3) || (node.agent.id == 4))))
@@ -9809,7 +9809,7 @@
 
         function deviceMessageFunctionEx() {
             var title = decodeURIComponent('{{{extitle}}}'), timeout = parseFloat(Q('d2devTimeout').value);
-            if (title == '') { title = "MeshCentral"; }
+            if (title == '') { title = "Beacon Remote"; }
             if (isNaN(timeout)) { timeout = 2; }
             if (currentNode.pmt == 1) {
                 meshserver.send({ action: 'pushmessage', nodeid: currentNode._id, title: title, msg: Q('d2devMessage').value });
@@ -9999,7 +9999,7 @@
             var op = Q('d2deviceop').value, title = Q('dp2notifyTitle').value, msg = Q('d2notifyMsg').value, timeout = parseFloat(Q('d2notifyTimeout').value);
             if (msg.length == 0) return;
             if (title == '') { title = decodeURIComponent('{{{extitle}}}'); }
-            if (title == '') { title = "MeshCentral"; }
+            if (title == '') { title = "Beacon Remote"; }
             if (isNaN(timeout)) { timeout = 2; }
             if (op == 1) { // MessageBox
                 meshserver.send({ action: 'msg', type: 'messagebox', nodeid: currentNode._id, title: title, msg: msg, timeout: (timeout * 60000) });
@@ -10610,22 +10610,22 @@
             return false;
         }
 
-        // Show MeshCentral Router dialog
+        // Show Beacon Remote Router dialog
         function p10showMeshRouterDialog() {
             if (xxdialogMode) return;
-            var x = '<div>' + "MeshCentral Router is a Windows tool for TCP port mapping. You can, for example, RDP into a remote device thru this server." + '</div><br />'; x += '<div class="row mb-1"><div class="col-md-4"><b>Win32 Executable</b></div><div class="col-md-8"><a style="cursor:pointer" onclick="downloadFile(\'meshagents?meshaction=winrouter' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '\',null,true)" class="link-primary">MeshCentralRouter.exe</a></div></div>';
-            x += '<div class="row mb-1"><div class="col-md-4"><b>MacOS Installer</b></div><div class="col-md-8"><a style="cursor:pointer" onclick="downloadFile(\'meshagents?meshaction=macrouter' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '\',null,true)" class="link-primary">MeshCentralRouter.dmg</a></div></div>';
+            var x = '<div>' + "Beacon Remote Router is a Windows tool for TCP port mapping. You can, for example, RDP into a remote device thru this server." + '</div><br />'; x += '<div class="row mb-1"><div class="col-md-4"><b>Win32 Executable</b></div><div class="col-md-8"><a style="cursor:pointer" onclick="downloadFile(\'meshagents?meshaction=winrouter' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '\',null,true)" class="link-primary">BeaconRemoteRouter.exe</a></div></div>';
+            x += '<div class="row mb-1"><div class="col-md-4"><b>MacOS Installer</b></div><div class="col-md-8"><a style="cursor:pointer" onclick="downloadFile(\'meshagents?meshaction=macrouter' + (urlargs.key ? ('&key=' + urlargs.key) : '') + '\',null,true)" class="link-primary">BeaconRemoteRouter.dmg</a></div></div>';
             var servername = serverinfo.name;
             if ((servername.indexOf('.') == -1) || ((features & 2) != 0)) { servername = window.location.hostname; } // If the server name is not set or it's in LAN-only mode, use the URL hostname as server name.
             var domainUrlNoSlash = domainUrl.substring(0, domainUrl.length - 1);
             var portStr = (serverinfo.port == 443) ? '' : (':' + serverinfo.port);
             var url = 'mcrouter://' + servername + portStr + domainUrl + 'control.ashx?c=' + authCookie + '&t=' + serverinfo.tlshash + '&l={{{lang}}}' + (urlargs.key ? ('&key=' + urlargs.key) : '');
-            //x += addHtmlValue("Launch", '<a style=cursor:pointer target="mcrouterframe" rel="noreferrer noopener" download href="' + url + '">Start MeshCentral Router</a>');
-            //x += '<br /><div style=width:100%><a style=cursor:pointer target="mcrouterframe" rel="noreferrer noopener" download href="' + url + '">' + "Start MeshCentral Router" + '</a>' + ", for this link to work you must download MeshCentral Router run it and click the install button." + '</div>';
-            x += '<br /><div class="alert alert-info">' + "Run MeshCentral Router and click \"install\" to make it launchable from the browser." + '</div>';
-            x += '<br /><a style=cursor:pointer target="mcrouterframe" rel="noreferrer noopener" href="' + url + '"><input type=button style=width:100%;cursor:pointer value="' + "Launch MeshCentral Router" + '" class="btn btn-primary btn-block" /></a>';
+            //x += addHtmlValue("Launch", '<a style=cursor:pointer target="mcrouterframe" rel="noreferrer noopener" download href="' + url + '">Start Beacon Remote Router</a>');
+            //x += '<br /><div style=width:100%><a style=cursor:pointer target="mcrouterframe" rel="noreferrer noopener" download href="' + url + '">' + "Start Beacon Remote Router" + '</a>' + ", for this link to work you must download Beacon Remote Router run it and click the install button." + '</div>';
+            x += '<br /><div class="alert alert-info">' + "Run Beacon Remote Router and click \"install\" to make it launchable from the browser." + '</div>';
+            x += '<br /><a style=cursor:pointer target="mcrouterframe" rel="noreferrer noopener" href="' + url + '"><input type=button style=width:100%;cursor:pointer value="' + "Launch Beacon Remote Router" + '" class="btn btn-primary btn-block" /></a>';
             x += '<iframe class="d-none" name="mcrouterframe"></iframe>';
-            setModalContent('xxAddAgent', "MeshCentral Router", x);
+            setModalContent('xxAddAgent', "Beacon Remote Router", x);
             showModal('xxAddAgentModal', 'idx_dlgOkButton', function () {
                 p20showAddMeshUserDialogEx(1, 'fileDownload');
             });
@@ -11067,7 +11067,7 @@
                     }
                     desktop.contype = 2;
                 } else if ((contype == null) || (contype == 1) || ((contype == 3) && ((currentNode.agent.id > 4) && ((debugmode == null))))) {
-                    // Setup the Mesh Agent remote desktop
+                    // Setup the Beacon Agent remote desktop
                     desktop = CreateAgentRedirect(meshserver, CreateAgentRemoteDesktop('Desk'), serverPublicNamePort, authCookie, authRelayCookie, domainUrl);
                     desktop.m.UseExtendedKeyFlag = (desktopNode.agent.id < 5); // Only use extended keys on Windows agents for now
                     desktop.m.mouseCursorActive(xxcurrentView == 11);
@@ -11576,7 +11576,7 @@
             applyDesktopSettings();
             updateDesktopButtons();
             if (desktop) {
-                if (desktop.contype == 1) { // Mesh Agent Remote Desktop
+                if (desktop.contype == 1) { // Beacon Agent Remote Desktop
                     desktop.m.SwapMouse = desktopsettings.swapmouse;
                     desktop.m.ReverseMouseWheel = desktopsettings.rmw;
                     desktop.m.remoteKeyMap = desktopsettings.remotekeymap;
@@ -11781,7 +11781,7 @@
             if (desktop.contype == 2) {
                 desktop.m.sendkey([[65307, 1], [65307, 0]]); // Intel AMT: ESC down, ESC release
             } else {
-                desktop.m.SendKeyMsgKC([[desktop.m.KeyAction.EXDOWN, 27], [desktop.m.KeyAction.EXUP, 27]]); // MeshAgent: ESC press, ESC release
+                desktop.m.SendKeyMsgKC([[desktop.m.KeyAction.EXDOWN, 27], [desktop.m.KeyAction.EXUP, 27]]); // Beacon Agent: ESC press, ESC release
             }
         }
 
@@ -12137,7 +12137,7 @@
                 // RDP
                 desktop.m.SendStringUnicode(txt);
             } else {
-                // MeshAgent
+                // Beacon Agent
                 if (desktopsettings.remotekeymap !== true) {
                     // New unicode typing
                     desktop.m.SendStringUnicode(txt);
@@ -13305,7 +13305,7 @@
                     }
 
                     if (args.xterm !== 0) {
-                        // Setup a mesh agent xterm terminal
+                        // Setup a Beacon Agent xterm terminal
                         QV('termarea3xdiv', true);
                         QV('Term', false);
 
@@ -13347,7 +13347,7 @@
                         QV('termarea3xdiv', false);
                         QV('Term', true);
 
-                        // Setup a mesh agent legacy terminal
+                        // Setup a Beacon Agent legacy terminal
                         terminal = CreateAgentRedirect(meshserver, CreateAmtRemoteTerminal('Term', termoptions), serverPublicNamePort, authCookie, authRelayCookie, domainUrl);
                         terminal.options = termoptions;
                         terminal.debugmode = debugmode;
@@ -13403,7 +13403,7 @@
                     // SSH
                     terminal.socket.send('~' + String.fromCharCode(key));
                 } else if (terminal.sendText) {
-                    // MeshAgent
+                    // Beacon Agent
                     terminal.sendText(String.fromCharCode(key));
                 } else {
                     // CIRA
@@ -13535,7 +13535,7 @@
         function connectFiles(e, contype, consent) {
             p13clearConsoleMsg();
             if (!files) {
-                // Setup a mesh agent files
+                // Setup a Beacon Agent files
                 files = CreateAgentRedirect(meshserver, CreateRemoteFiles(p13gotFiles), serverPublicNamePort, authCookie, authRelayCookie, domainUrl);
                 if (contype == 2) { files.urlname = 'sshfilesrelay.ashx'; } // If this is a SSH session, change the URL to the SSH application relay.
                 files.contype = contype;
@@ -15073,7 +15073,7 @@
             p13folderup(9999); // Refresh the current folder
         }
 
-        // Receive upload ack from the mesh agent, use this to keep sending more data
+        // Receive upload ack from the Beacon Agent, use this to keep sending more data
         function p13gotUploadData(cmd) {
             if ((uploadFile == null) || (parseInt(uploadFile.xfilePtr) != parseInt(cmd.reqid))) { return; }
             switch (cmd.action) {
@@ -15380,7 +15380,7 @@
             }
             if (x != '') { sections.push({ name: "Operating System", html: x, img: 'software64.png' }); }
 
-            // MeshAgent
+            // Beacon Agent
             if (node.agent) {
                 var x = '';
                 if ((node.agent != null) && (node.agent.id != null) && (node.agent.ver != null)) {
@@ -15388,7 +15388,7 @@
                     if (node.agent.id <= agentsStr.length) { str = agentsStr[node.agent.id]; } else { str = agentsStr[0]; }
                     if (node.agent.ver != 0) { str += ' v' + node.agent.ver; }
                     if (node.agent.id == 14) { str = EscapeHtml(node.agent.core); }
-                    x += addDetailItem("Mesh Agent", str);
+                    x += addDetailItem("Beacon Agent", str);
                 }
                 if (node._id) { x += addDetailItem("Node ID", EscapeHtml(node._id.split('/')[2]), true); }
                 if (node.firstconnect) { x += addDetailItem("First agent connection", printDateTime(new Date(node.firstconnect))); }
@@ -15420,7 +15420,7 @@
                 if (hardware.time != null) {
                     x += addDetailItem("Last details update", printDateTime(new Date(hardware.time)));
                 }
-                if (x != '') { sections.push({ name: "Mesh Agent", html: x, img: 'meshagent64.png' }); }
+                if (x != '') { sections.push({ name: "Beacon Agent", html: x, img: 'meshagent64.png' }); }
             }
 
             // Mobile
@@ -16258,7 +16258,7 @@
                     consoleNode.consoleText += t;
                     meshserver.send({ action: 'pushconsole', nodeid: consoleNode._id, console: v });
                 } else if ((consoleNode.conn & 1) != 0) {
-                    // Send the command to the mesh agent
+                    // Send the command to the Beacon Agent
                     consoleNode.consoleText += t;
                     meshserver.send({ action: 'msg', type: 'console', nodeid: consoleNode._id, value: v });
                 }
@@ -16278,7 +16278,7 @@
             }
         }
 
-        // Handle Mesh Agent console data
+        // Handle Beacon Agent console data
         function p15consoleReceive(node, data, source) {
             if (node === 'serverconsole') {
                 // Server console data
@@ -16337,10 +16337,10 @@
                 // Upload file as core
                 p15uploadCore2();
             } else if (Q('d3coreMode').value == 4) {
-                // Soft disconnect the mesh agent
+                // Soft disconnect the Beacon Agent
                 meshserver.send({ action: 'agentdisconnect', nodeid: consoleNode._id, disconnectMode: 1 });
             } else if (Q('d3coreMode').value == 5) {
-                // Hard disconnect the mesh agent
+                // Hard disconnect the Beacon Agent
                 meshserver.send({ action: 'agentdisconnect', nodeid: consoleNode._id, disconnectMode: 2 });
             } else if (Q('d3coreMode').value == 6) {
                 // Upload a recovery core
@@ -16349,10 +16349,10 @@
                 // Upload a tiny core
                 meshserver.send({ action: 'uploadagentcore', nodeids: [consoleNode._id], type: 'tiny' });
             } else if (Q('d3coreMode').value == 8) {
-                // Restart MeshAgent service
+                // Restart Beacon Agent service
                 meshserver.send({ action: 'msg', type: 'console', nodeid: consoleNode._id, value:'service restart' });
             } else if (Q('d3coreMode').value == 9) {
-                // Update mesh agent
+                // Update Beacon Agent
                 meshserver.send({ action: 'updateAgents', nodeids: [consoleNode._id] });
             }
         }
@@ -16364,7 +16364,7 @@
             Q('d3auth').value = authCookie;
             Q('d3filter').value = '.js';
             Q('d3attrib').value = currentNode._id;
-            setModalContent('xxAddAgent', "Upload Mesh Agent Core", '');
+            setModalContent('xxAddAgent', "Upload Beacon Agent Core", '');
             showModal('xxAddAgentModal', 'idx_dlgOkButton', () => p15uploadCoreEx2());
             d3init();
         }
@@ -16372,10 +16372,10 @@
         function p15uploadCoreEx2() {
             var mode = Q('d3uploadMode').value;
             if (mode == 1) {
-                // Upload local mesh agent core
+                // Upload local Beacon Agent core
                 Q('d3submit').click();
             } else {
-                // Upload server mesh agent code
+                // Upload server Beacon Agent code
                 var files = d3getFileSel();
                 if (files.length == 1) { meshserver.send({ action: 'uploadagentcore', nodeids: [consoleNode._id], type: 'custom', path: d3filetreelocation.join('/') + '/' + files[0] }); }
             }
@@ -16685,7 +16685,7 @@
             y += addHtmlFormFloating("Dates & Time", x);
 
             if ((userinfo.siteadmin == 0xFFFFFFFF) && (domain == '')) {
-                y += '<br /><a rel="noreferrer noopener" target="_blank" href="translator.htm">' + "Help translate MeshCentral" + '</a>';
+                y += '<br /><a rel="noreferrer noopener" target="_blank" href="translator.htm">' + "Help translate Beacon Remote" + '</a>';
             }
 
             setModalContent('xxAddAgent', "Localization Settings", y);
@@ -17324,7 +17324,7 @@
         function server_showVersionDlg() {
             if (xxdialogMode) return false;
             xxdialogMode = 2; xxdialogTag = 'MeshCentralServerUpdate';
-            setModalContent('xxAddAgent', "MeshCentral Version", "Loading...");
+            setModalContent('xxAddAgent', "Beacon Remote Version", "Loading...");
             showModal('xxAddAgentModal', 'idx_dlgOkButton');
             meshserver.send({ action: 'serverversion' });
             return false;
@@ -17530,8 +17530,8 @@
                 }
             }
             if ((currentMesh.mtype == 2) && ((userinfo.siteadmin == 0xFFFFFFFF) || ((userinfo.siteadmin & 4096) == 0))) {
-                x += '<button class="btn btn-primary btn-sm me-2 mb-1" onclick=\'return addAgentToMesh("' + currentMesh._id + '")\' title="' + "Add a new computer to this device group by installing the mesh agent." + '"><i class="fa-solid fa-circle-plus"></i> ' + "Add Agent" + '</button>';
-                x += '<button class="btn btn-primary btn-sm me-2 mb-1" onclick=\'return inviteAgentToMesh("' + currentMesh._id + '")\' title="' + "Invite someone to install the mesh agent on this device group." + '"><i class="fa-solid fa-user-plus"></i> ' + "Invite" + '</button>';
+                x += '<button class="btn btn-primary btn-sm me-2 mb-1" onclick=\'return addAgentToMesh("' + currentMesh._id + '")\' title="' + "Add a new computer to this device group by installing the Beacon Agent." + '"><i class="fa-solid fa-circle-plus"></i> ' + "Add Agent" + '</button>';
+                x += '<button class="btn btn-primary btn-sm me-2 mb-1" onclick=\'return inviteAgentToMesh("' + currentMesh._id + '")\' title="' + "Invite someone to install the Beacon Agent on this device group." + '"><i class="fa-solid fa-user-plus"></i> ' + "Invite" + '</button>';
             }
             if ((currentMesh.mtype == 3) && ((userinfo.siteadmin == 0xFFFFFFFF) || ((userinfo.siteadmin & 4096) == 0))) {
                 x += '<button class="btn btn-primary btn-sm me-2 mb-1" onclick=\'return addLocalDeviceToMesh("' + currentMesh._id + '")\' title="' + "Add device located on the local network." + '"><i class="fa-solid fa-circle-plus"></i> ' + "Add Device" + '</button>';
@@ -18094,7 +18094,7 @@
             x += '<label><input type=checkbox class="form-check-input me-2" onchange=p20validateAddMeshUserDialog() id=p20noregistry style=margin-left:12px>' + "No Registry Access" + '</label><br>';
             x += '<label><input type=checkbox class="form-check-input me-2" onchange=p20validateAddMeshUserDialog() id=p20nosoftware style=margin-left:12px>' + "No Software" + '</label><br>';
             x += '<label><input type=checkbox class="form-check-input me-2" onchange=p20validateAddMeshUserDialog() id=p20noamt style=margin-left:12px>' + "No Intel&reg; AMT" + '</label><br>';
-            x += '<label><input type=checkbox class="form-check-input me-2" onchange=p20validateAddMeshUserDialog() id=p20meshagentconsole>' + "Mesh Agent Console" + '</label><br>';
+            x += '<label><input type=checkbox class="form-check-input me-2" onchange=p20validateAddMeshUserDialog() id=p20meshagentconsole>' + "Beacon Agent Console" + '</label><br>';
             x += '<label><input type=checkbox class="form-check-input me-2" onchange=p20validateAddMeshUserDialog() id=p20meshserverfiles>' + "Server Files" + '</label><br>';
             x += '<label><input type=checkbox class="form-check-input me-2" onchange=p20validateAddMeshUserDialog() id=p20wakedevices>' + "Wake Devices" + '</label><br>';
             x += '<label><input type=checkbox class="form-check-input me-2" onchange=p20validateAddMeshUserDialog() id=p20editnotes>' + "Edit Device Notes" + '</label><br>';
@@ -18532,7 +18532,7 @@
                 x += '<div style=width:100%;text-align:center><a rel="noreferrer noopener" target=_blank href="' + url + '">' + url + '</a></div><br />';
                 x += '<div style=margin-bottom:5px><label><input id=agentJoinCheck type=checkbox class="form-check-input me-2" onclick=p20editmeshInviteCodeValidate() />' + "Enable Invite Codes" + '</label></div>';
                 x += addHtmlFormFloating("Invite Codes", '<input id=agentInviteCode class="form-control" onkeyup=p20editmeshInviteCodeValidate() placeholder="code1, code2, code3" />');
-                x += addHtmlFormFloating("Agents", '<select id=agentType class="form-select" onchange=p20editmeshInviteCodeValidate()><option value=0>' + "All Available Agents" + '</option><option value=1>' + "Windows MeshAgent" + '</option><option value=2>' + "Linux MeshAgent" + '</option><option value=4>' + "MacOS MeshAgent" + '</option><option value=8>' + "MeshCentral Assistant" + '</option></select>');
+                x += addHtmlFormFloating("Agents", '<select id=agentType class="form-select" onchange=p20editmeshInviteCodeValidate()><option value=0>' + "All Available Agents" + '</option><option value=1>' + "Windows Beacon Agent" + '</option><option value=2>' + "Linux Beacon Agent" + '</option><option value=4>' + "MacOS Beacon Agent" + '</option><option value=8>' + "Beacon Assistant" + '</option></select>');
                 x += '<div id=d2agentInstallTypeDiv>';
                 x += addHtmlFormFloating("Installation Type", '<select id=agentInviteType class="form-select"><option value=0>' + "Background and interactive" + '</option><option value=2>' + "Background only" + '</option><option value=1>' + "Interactive only" + '</option></select>');
                 x += '</div>';
@@ -22924,9 +22924,9 @@
             x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c1 ' + ((serverTraceSources.indexOf('cookie') >= 0) ? 'checked' : '') + '>' + "Cookie encoder" + '</label></div>';
             x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c2 ' + ((serverTraceSources.indexOf('dispatch') >= 0) ? 'checked' : '') + '>' + "Message Dispatcher" + '</label></div>';
             x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c3 ' + ((serverTraceSources.indexOf('main') >= 0) ? 'checked' : '') + '>' + "Main Server Messages" + '</label></div>';
-            x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c4 ' + ((serverTraceSources.indexOf('peer') >= 0) ? 'checked' : '') + '>' + "MeshCentral Server Peering" + '</label></div>';
-            x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c15 ' + ((serverTraceSources.indexOf('agent') >= 0) ? 'checked' : '') + '>' + "MeshAgent traffic" + '</label></div>';
-            x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c14 ' + ((serverTraceSources.indexOf('agentupdate') >= 0) ? 'checked' : '') + '>' + "MeshAgent update" + '</label></div>';
+            x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c4 ' + ((serverTraceSources.indexOf('peer') >= 0) ? 'checked' : '') + '>' + "Beacon Remote Server Peering" + '</label></div>';
+            x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c15 ' + ((serverTraceSources.indexOf('agent') >= 0) ? 'checked' : '') + '>' + "Beacon Agent traffic" + '</label></div>';
+            x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c14 ' + ((serverTraceSources.indexOf('agentupdate') >= 0) ? 'checked' : '') + '>' + "Beacon Agent update" + '</label></div>';
             x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c16 ' + ((serverTraceSources.indexOf('cert') >= 0) ? 'checked' : '') + '>' + "Server Certificate" + '</label></div>';
             x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c17 ' + ((serverTraceSources.indexOf('db') >= 0) ? 'checked' : '') + '>' + "Server Database" + '</label></div>';
             x += '<div><label><input type=checkbox class="form-check-input me-2" id=p41c18 ' + ((serverTraceSources.indexOf('email') >= 0) ? 'checked' : '') + '>' + "Email/SMS/Push Traffic" + '</label></div>';
@@ -23310,8 +23310,8 @@
                         //  'downgrade': 'Downgrade' // disabling until plugins have prior versions available for better testing
                     }
                 };
-                var vers_not_compat = ' [ <span onclick="return setDialogMode(2, \'Compatibility Issue\', 1, null, \'This plugin version is not compatible with your MeshCentral installation, please upgrade MeshCentral first.\');" title="' + "Version incompatible, please upgrade your MeshCentral installation first" + '" style="cursor: pointer; color:red;"> ! </span> ]';
-                var vers_not_compat = ' [ <span onclick="return setModalContent(\'xxAddAgent\', \'Compatibility Issue\', \'This plugin version is not compatible with your MeshCentral installation, please upgrade MeshCentral first.\');showModal(\'xxAddAgentModal\', \'idx_dlgOkButton\');" title="' + "Version incompatible, please upgrade your MeshCentral installation first" + '" style="cursor: pointer; color:red;"> ! </span> ]';
+                var vers_not_compat = ' [ <span onclick="return setDialogMode(2, \'Compatibility Issue\', 1, null, \'This plugin version is not compatible with your Beacon Remote installation. Upgrade Beacon Remote first.\');" title="' + "Version incompatible; upgrade Beacon Remote first" + '" style="cursor: pointer; color:red;"> ! </span> ]';
+                var vers_not_compat = ' [ <span onclick="return setModalContent(\'xxAddAgent\', \'Compatibility Issue\', \'This plugin version is not compatible with your Beacon Remote installation. Upgrade Beacon Remote first.\');showModal(\'xxAddAgentModal\', \'idx_dlgOkButton\');" title="' + "Version incompatible; upgrade Beacon Remote first" + '" style="cursor: pointer; color:red;"> ! </span> ]';
 
                 var tbl = Q('p42tbl');
                 installedPluginList.forEach(function (p) {

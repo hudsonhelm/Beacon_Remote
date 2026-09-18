@@ -6402,7 +6402,7 @@ module.exports.CreateWebServer = function (parent, db, args, certificates, doneF
                         if (obj.parent.meshToolsBinaries['MeshCentralRouter']) { p = obj.parent.meshToolsBinaries['MeshCentralRouter'].path; }
                         if ((p == null) || (!obj.fs.existsSync(p))) { p = obj.path.join(__dirname, 'agents', 'MeshCentralRouter.exe'); }
                         if (obj.fs.existsSync(p)) {
-                            setContentDispositionHeader(res, 'application/octet-stream', 'MeshCentralRouter.exe', null, 'MeshCentralRouter.exe');
+                            setContentDispositionHeader(res, 'application/octet-stream', 'BeaconRemoteRouter.exe', null, 'BeaconRemoteRouter.exe');
                             try { res.sendFile(p); } catch (ex) { }
                         } else { try { res.sendStatus(404); } catch (ex) { } }
                         return;
@@ -6420,7 +6420,7 @@ module.exports.CreateWebServer = function (parent, db, args, certificates, doneF
                         if (obj.parent.meshToolsBinaries['MeshCentralRouterMacOS']) { p = obj.parent.meshToolsBinaries['MeshCentralRouterMacOS'].path; }
                         if ((p == null) || (!obj.fs.existsSync(p))) { p = obj.path.join(__dirname, 'agents', 'MeshCentralRouter.dmg'); }
                         if (obj.fs.existsSync(p)) {
-                            setContentDispositionHeader(res, 'application/octet-stream', 'MeshCentralRouter.dmg', null, 'MeshCentralRouter.dmg');
+                            setContentDispositionHeader(res, 'application/octet-stream', 'BeaconRemoteRouter.dmg', null, 'BeaconRemoteRouter.dmg');
                             try { res.sendFile(p); } catch (ex) { }
                         } else { try { res.sendStatus(404); } catch (ex) { } }
                         return;
@@ -6483,7 +6483,7 @@ module.exports.CreateWebServer = function (parent, db, args, certificates, doneF
                 if (parent.meshToolsBinaries['MeshCentralRouter']) { p = parent.meshToolsBinaries['MeshCentralRouter'].path; }
                 if ((p == null) || !obj.fs.existsSync(p)) { p = obj.path.join(__dirname, 'agents', 'MeshCentralRouter.exe'); }
                 if (obj.fs.existsSync(p)) {
-                    setContentDispositionHeader(res, 'application/octet-stream', 'MeshCentralRouter.exe', null, 'MeshCentralRouter.exe');
+                    setContentDispositionHeader(res, 'application/octet-stream', 'BeaconRemoteRouter.exe', null, 'BeaconRemoteRouter.exe');
                     try { res.sendFile(p); } catch (ex) { }
                 } else { try { res.sendStatus(404); } catch (ex) { } }
                 return;
@@ -6501,7 +6501,7 @@ module.exports.CreateWebServer = function (parent, db, args, certificates, doneF
                 if (parent.meshToolsBinaries['MeshCentralRouterMacOS']) { p = parent.meshToolsBinaries['MeshCentralRouterMacOS'].path; }
                 if ((p == null) || !obj.fs.existsSync(p)) { p = obj.path.join(__dirname, 'agents', 'MeshCentralRouter.dmg'); }
                 if (obj.fs.existsSync(p)) {
-                    setContentDispositionHeader(res, 'application/octet-stream', 'MeshCentralRouter.dmg', null, 'MeshCentralRouter.dmg');
+                    setContentDispositionHeader(res, 'application/octet-stream', 'BeaconRemoteRouter.dmg', null, 'BeaconRemoteRouter.dmg');
                     try { res.sendFile(p); } catch (ex) { }
                 } else { try { res.sendStatus(404); } catch (ex) { } }
                 return;
