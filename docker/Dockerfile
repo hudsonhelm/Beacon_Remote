@@ -234,5 +234,10 @@ COPY ./docker/entrypoint.sh  /opt/meshcentral/entrypoint.sh
 COPY ./docker/config.json.template /opt/meshcentral/config.json.template
 COPY ./docker/beacon-branding.json /opt/meshcentral/beacon-branding.json
 COPY ./Images/Brand /opt/meshcentral/beacon-brand
+COPY ./Images/Brand/Browser/favicon.ico /opt/meshcentral/meshcentral/public/favicon.ico
+COPY ./Images/Brand/Browser/favicon-16.png /opt/meshcentral/meshcentral/public/favicon-16x16.png
+COPY ./Images/Brand/Browser/favicon-32.png /opt/meshcentral/meshcentral/public/favicon-32x32.png
+COPY ./Images/Brand/Browser/favicon-180.png /opt/meshcentral/meshcentral/public/favicon-303x303.png
+COPY ./Images/Brand/Browser/favicon-512.png /opt/meshcentral/meshcentral/public/android-chrome-512x512.png
 
 ENTRYPOINT  ["/bin/bash", "/opt/meshcentral/entrypoint.sh"]

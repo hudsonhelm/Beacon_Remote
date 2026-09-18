@@ -50,6 +50,7 @@ const dockerfile = read('docker/Dockerfile');
 const entrypoint = read('docker/entrypoint.sh');
 expect(dockerfile.includes('BEACON_BRANDING="true"'), 'container enables Beacon branding by default');
 expect(dockerfile.includes('COPY ./Images/Brand /opt/meshcentral/beacon-brand'), 'container packages the approved asset set');
+expect(dockerfile.includes('/opt/meshcentral/meshcentral/public/favicon.ico'), 'favicon is installed without activating a partial web override');
 expect(entrypoint.includes("jq -s '.[0] * .[1]'"), 'branding overlay merges into persistent configuration');
 expect(entrypoint.includes('isolated upstream comparison only'), 'branding opt-out is explicitly restricted');
 

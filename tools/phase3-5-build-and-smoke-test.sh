@@ -13,7 +13,6 @@ upstream_version="1.2.5"
 upstream_revision="9f328938a355b778b037435dbc61ef89731f71ad"
 container_name="beacon-phase3-5-smoke"
 data_volume="beacon-phase3-5-data"
-web_volume="beacon-phase3-5-web"
 
 if [[ ! "$revision" =~ ^[0-9a-f]{40}$ ]]; then
     echo "The Beacon revision must be a full 40-character Git SHA." >&2
@@ -22,8 +21,8 @@ fi
 
 cleanup() {
     docker rm -f "$container_name" >/dev/null 2>&1 || true
-    docker volume rm "$data_volume" "$web_volume" >/dev/null 2>&1 || true
-    rm -f /tmp/beacon-phase3-5-login.html /tmp/beacon-phase3-5-manifest.json /tmp/beacon-phase3-5-favicon.ico
+    docker volume rm "$data_volume" >/dev/null 2>&1 || true
+    rm -f /tmp/beacon-phase3-5-login.html /tmp/beacon-phase3-5-manifest.json /tmp/beacon-phase3-5-favicon.ico /tmp/beacon-phase3-5-common.js
 }
 trap cleanup EXIT
 
@@ -75,7 +74,6 @@ docker run -d \
     -e HOSTNAME=localhost \
     -e ALLOW_NEW_ACCOUNTS=false \
     -v "$data_volume:/opt/meshcentral/meshcentral-data" \
-    -v "$web_volume:/opt/meshcentral/meshcentral-web" \
     "$image_tag" >/dev/null
 
 for _ in $(seq 1 90); do
@@ -92,8 +90,10 @@ done
 curl -kfsS https://127.0.0.1:10443/login >/tmp/beacon-phase3-5-login.html
 curl -kfsS https://127.0.0.1:10443/manifest.json >/tmp/beacon-phase3-5-manifest.json
 curl -kfsS https://127.0.0.1:10443/favicon.ico >/tmp/beacon-phase3-5-favicon.ico
+curl -kfsS https://127.0.0.1:10443/scripts/common-0.0.1.js >/tmp/beacon-phase3-5-common.js
 
 grep -q '<title>Beacon Remote - Login</title>' /tmp/beacon-phase3-5-login.html
+test -s /tmp/beacon-phase3-5-common.js
 if grep -Eq 'MeshCentral Assistant|MeshCentral Agent|Mesh Agent|>MeshCentral<' /tmp/beacon-phase3-5-login.html; then
     echo "Upstream product branding remains on the login page." >&2
     exit 1
@@ -106,6 +106,6 @@ docker exec "$container_name" jq -e '
     .domains[""].agentFileInfo.productName == "Beacon Agent"
 ' /opt/meshcentral/meshcentral-data/config.json >/dev/null
 docker exec "$container_name" test -s /opt/meshcentral/meshcentral-data/beacon-agent.ico
-docker exec "$container_name" test -s /opt/meshcentral/meshcentral-web/public/favicon.ico
+docker exec "$container_name" test -s /opt/meshcentral/meshcentral/public/favicon.ico
 
 echo "Phase 3.5 branded image build and HTTPS smoke test passed for $image_tag ($revision)."
