@@ -304,6 +304,31 @@ function New-ComponentLockup {
     finally { $sourceImage.Dispose() }
 }
 
+function New-RemoteHeaderLockup {
+    param([Parameter(Mandatory)] [string] $Output)
+
+    $sourceImage = [System.Drawing.Image]::FromFile((Resolve-Path -LiteralPath $approved.Lockup).Path)
+    try {
+        $targetImage = [System.Drawing.Bitmap]::new(450, 66, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+        try {
+            $graphics = [System.Drawing.Graphics]::FromImage($targetImage)
+            try {
+                Set-HighQualityGraphics -Graphics $graphics
+                $graphics.Clear([System.Drawing.Color]::Transparent)
+                Draw-FittedImage -Graphics $graphics -Image $sourceImage -SourceCrop $crops.Lockup -TargetBox ([System.Drawing.Rectangle]::new(0, 0, 215, 66))
+                $font = [System.Drawing.Font]::new('Segoe UI', 18, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+                $brush = [System.Drawing.SolidBrush]::new([System.Drawing.ColorTranslator]::FromHtml('#00539B'))
+                try { $graphics.DrawString('REMOTE', $font, $brush, 215, 23) }
+                finally { $font.Dispose(); $brush.Dispose() }
+            }
+            finally { $graphics.Dispose() }
+            $targetImage.Save([System.IO.Path]::GetFullPath($Output), [System.Drawing.Imaging.ImageFormat]::Png)
+        }
+        finally { $targetImage.Dispose() }
+    }
+    finally { $sourceImage.Dispose() }
+}
+
 $navy = [System.Drawing.ColorTranslator]::FromHtml('#003366')
 $cyan = [System.Drawing.ColorTranslator]::FromHtml('#00B0FF')
 $white = [System.Drawing.Color]::White
@@ -374,15 +399,17 @@ foreach ($component in @('Remote', 'Agent', 'Assistant')) {
 }
 
 # Web surfaces.
-Copy-Item -LiteralPath (Join-Path $brandRoot 'Lockups\beacon-lockup-1200x400.png') -Destination (Join-Path $brandRoot 'Web\beacon-header-light-1200x400.png') -Force
+$remoteLockup = Join-Path $brandRoot 'Lockups\beacon-remote-lockup-1200x400.png'
+Copy-Item -LiteralPath $remoteLockup -Destination (Join-Path $brandRoot 'Web\beacon-header-light-1200x400.png') -Force
 Resize-Png -Source (Join-Path $brandRoot 'Web\beacon-header-light-1200x400.png') -Output (Join-Path $brandRoot 'Web\beacon-header-light-600x200.png') -Width 600 -Height 200
-New-FittedPng -Source $approved.Lockup -SourceCrop $crops.Lockup -Output (Join-Path $brandRoot 'Web\beacon-header-450x66.png') -Width 450 -Height 66 -Padding 2
-New-FittedPng -Source $approved.Lockup -SourceCrop $crops.Lockup -Output (Join-Path $brandRoot 'Web\beacon-header-dark-1200x400.png') -Width 1200 -Height 400 -Padding 8 -Recolor $white
+New-RemoteHeaderLockup -Output (Join-Path $brandRoot 'Web\beacon-header-450x66.png')
+New-FittedPng -Source $remoteLockup -SourceCrop ([System.Drawing.Rectangle]::new(0, 0, 1200, 400)) -Output (Join-Path $brandRoot 'Web\beacon-header-dark-1200x400.png') -Width 1200 -Height 400 -Padding 8 -Recolor $white
 Resize-Png -Source (Join-Path $brandRoot 'Web\beacon-header-dark-1200x400.png') -Output (Join-Path $brandRoot 'Web\beacon-header-dark-600x200.png') -Width 600 -Height 200
 Set-SolidRgb -Path (Join-Path $brandRoot 'Web\beacon-header-dark-1200x400.png') -Color $white
 Set-SolidRgb -Path (Join-Path $brandRoot 'Web\beacon-header-dark-600x200.png') -Color $white
-New-FittedPng -Source $approved.FullColor -SourceCrop $crops.FullColor -Output (Join-Path $brandRoot 'Web\beacon-login-light-512.png') -Width 512 -Height 512 -Padding 18
-New-FittedPng -Source $approved.Reversed -SourceCrop $crops.Reversed -Output (Join-Path $brandRoot 'Web\beacon-login-dark-512.png') -Width 512 -Height 512
+New-FittedPng -Source $remoteLockup -SourceCrop ([System.Drawing.Rectangle]::new(0, 0, 1200, 400)) -Output (Join-Path $brandRoot 'Web\beacon-login-light-512.png') -Width 512 -Height 171 -Padding 4
+New-FittedPng -Source $remoteLockup -SourceCrop ([System.Drawing.Rectangle]::new(0, 0, 1200, 400)) -Output (Join-Path $brandRoot 'Web\beacon-login-dark-512.png') -Width 512 -Height 171 -Padding 4 -Recolor $white
+Set-SolidRgb -Path (Join-Path $brandRoot 'Web\beacon-login-dark-512.png') -Color $white
 
 # Installer and uninstall-entry artwork.
 Copy-Item -LiteralPath (Join-Path $brandRoot 'beacon.ico') -Destination (Join-Path $brandRoot 'Installer\beacon-installer.ico') -Force

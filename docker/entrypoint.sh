@@ -36,7 +36,7 @@ function apply_beacon_branding() {
     mkdir -p "$data_root"
 
     cp "$brand_root/Web/beacon-header-450x66.png" "$data_root/beacon-remote-header.png"
-    cp "$brand_root/Web/beacon-login-light-512.png" "$data_root/beacon-remote-login.png"
+    cp "$brand_root/Web/beacon-login-dark-512.png" "$data_root/beacon-remote-login.png"
     cp "$brand_root/PNG/Application/beacon-app-512.png" "$data_root/beacon-remote-pwa.png"
     cp "$brand_root/PNG/Application/beacon-app-128.png" "$data_root/beacon-agent.png"
     cp "$brand_root/PNG/Application/beacon-app-128.png" "$data_root/beacon-assistant.png"
