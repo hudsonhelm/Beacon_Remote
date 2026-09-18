@@ -8,7 +8,7 @@ FROM node-base AS mesh-compiler
 
 # Any value inside one of the disable ARGs will be accepted.
 ARG DISABLE_EXTRACT="yes"
-ARG DISABLE_MINIFY="yes"
+ARG DISABLE_MINIFY="false"
 ARG DISABLE_TRANSLATE="yes"
 #    NODE_OPTIONS="--max_old_space_size=4096"
 # If your process gets OOM killed, perhaps the above will help.

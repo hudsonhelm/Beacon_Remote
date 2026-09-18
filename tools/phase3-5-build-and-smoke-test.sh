@@ -90,7 +90,7 @@ done
 curl -kfsS https://127.0.0.1:10443/login >/tmp/beacon-phase3-5-login.html
 curl -kfsS https://127.0.0.1:10443/manifest.json >/tmp/beacon-phase3-5-manifest.json
 curl -kfsS https://127.0.0.1:10443/favicon.ico >/tmp/beacon-phase3-5-favicon.ico
-curl -kfsS https://127.0.0.1:10443/scripts/common-0.0.1.js >/tmp/beacon-phase3-5-common.js
+curl -kfsS https://127.0.0.1:10443/scripts/common-0.0.1-min.js >/tmp/beacon-phase3-5-common.js
 
 grep -q '<title>Beacon Remote - Login</title>' /tmp/beacon-phase3-5-login.html
 test -s /tmp/beacon-phase3-5-common.js
