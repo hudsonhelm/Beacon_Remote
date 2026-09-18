@@ -6411,7 +6411,7 @@ module.exports.CreateWebServer = function (parent, db, args, certificates, doneF
                         if (obj.parent.meshToolsBinaries['MeshCentralAssistant']) { p = obj.parent.meshToolsBinaries['MeshCentralAssistant'].path; }
                         if ((p == null) || (!obj.fs.existsSync(p))) { p = obj.path.join(__dirname, 'agents', 'MeshCentralAssistant.exe'); }
                         if (obj.fs.existsSync(p)) {
-                            setContentDispositionHeader(res, 'application/octet-stream', 'MeshCentralAssistant.exe', null, 'MeshCentralAssistant.exe');
+                            setContentDispositionHeader(res, 'application/octet-stream', 'BeaconAssistant.exe', null, 'BeaconAssistant.exe');
                             try { res.sendFile(p); } catch (ex) { }
                         } else { try { res.sendStatus(404); } catch (ex) { } }
                         return;
@@ -6492,7 +6492,7 @@ module.exports.CreateWebServer = function (parent, db, args, certificates, doneF
                 if (parent.meshToolsBinaries['MeshCentralAssistant']) { p = parent.meshToolsBinaries['MeshCentralAssistant'].path; }
                 if ((p == null) || !obj.fs.existsSync(p)) { p = obj.path.join(__dirname, 'agents', 'MeshCentralAssistant.exe'); }
                 if (obj.fs.existsSync(p)) {
-                    setContentDispositionHeader(res, 'application/octet-stream', 'MeshCentralAssistant.exe', null, 'MeshCentralAssistant.exe');
+                    setContentDispositionHeader(res, 'application/octet-stream', 'BeaconAssistant.exe', null, 'BeaconAssistant.exe');
                     try { res.sendFile(p); } catch (ex) { }
                 } else { try { res.sendStatus(404); } catch (ex) { } }
                 return;

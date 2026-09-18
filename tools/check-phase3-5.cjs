@@ -83,7 +83,9 @@ expect(!core.includes("var consentTitle = 'MeshCentral'"), 'agent consent fallba
 expect(!core.includes('var notifyTitle = "MeshCentral"'), 'agent notification fallback title is branded');
 expect(core.includes("require('MeshAgent')"), 'internal upstream agent API identifier remains unchanged');
 expect(read('meshcentral.js').includes("localname: 'MeshCentralAssistant.exe'"), 'internal upstream assistant artifact identifier remains unchanged');
-expect(read('webserver.js').includes("'BeaconRemoteRouter.exe'"), 'router download filename is branded');
+const webserver = read('webserver.js');
+expect(webserver.includes("'BeaconRemoteRouter.exe'"), 'router download filename is branded');
+expect(!webserver.includes("setContentDispositionHeader(res, 'application/octet-stream', 'MeshCentralAssistant.exe'"), 'legacy assistant download filename is branded');
 
 expect(exists('LICENSE'), 'Apache-2.0 license remains present');
 expect(dockerfile.includes('org.opencontainers.image.licenses="Apache-2.0"'), 'image retains Apache-2.0 license metadata');
